@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estudo.CSharp.Framework.UIC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estudo.CSharp.Framework.LibrarySample", "Estudo.CSharp.Framework.LibrarySample\Estudo.CSharp.Framework.LibrarySample.csproj", "{E8360864-C7EF-48D6-90B3-3746B4A12491}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estudo.CSharp.Framework.LibrarySample.Library", "Estudo.CSharp.Framework.LibrarySample.Library\Estudo.CSharp.Framework.LibrarySample.Library.csproj", "{DE56B36F-C6DB-4F1B-BE84-12D391640A72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E8360864-C7EF-48D6-90B3-3746B4A12491}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8360864-C7EF-48D6-90B3-3746B4A12491}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8360864-C7EF-48D6-90B3-3746B4A12491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE56B36F-C6DB-4F1B-BE84-12D391640A72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE56B36F-C6DB-4F1B-BE84-12D391640A72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE56B36F-C6DB-4F1B-BE84-12D391640A72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE56B36F-C6DB-4F1B-BE84-12D391640A72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

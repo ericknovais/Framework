@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Estudo.CSharp.Framework.LibrarySample.Library;
 
 namespace Estudo.CSharp.Framework.LibrarySample
 {
@@ -31,6 +32,14 @@ namespace Estudo.CSharp.Framework.LibrarySample
         {
             get { return anoPublicacao; }
             set { anoPublicacao = value; }
+        }
+
+         Biblioteca _biblioteca;
+
+        public Biblioteca _Biblioteca
+        {
+            get { return _biblioteca; }
+            set { _biblioteca = value; }
         }
 
     }
