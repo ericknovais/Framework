@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using System.Threading;
 
 namespace System.Globalization_Exemple
 {
@@ -24,23 +25,39 @@ namespace System.Globalization_Exemple
 
             #region CultureInfo
             CultureInfo ci = new CultureInfo("pt-BR");
-            string dia;
-            for (int i = 0; i < ci.DateTimeFormat.DayNames.Length; i++)
-            {
-                dia = ci.DateTimeFormat.DayNames[i].ToUpper();
-                Console.WriteLine(dia);
-            }
-            Console.Write("");
-            string mes;
-            for (int i = 0; i < ci.DateTimeFormat.MonthNames.Length; i++)
-            {
 
-                mes = ci.DateTimeFormat.MonthNames[i].ToUpper();
-                Console.WriteLine(mes);
-            }
-          
+            //string dia;
+            //for (int i = 0; i < ci.DateTimeFormat.DayNames.Length; i++)
+            //{
+            //    dia = ci.DateTimeFormat.DayNames[i].ToUpper();
+            //    Console.WriteLine(dia);
+            //}
+            //Console.Write("");
+            //string mes;
+            //for (int i = 0; i < ci.DateTimeFormat.MonthNames.Length; i++)
+            //{
+
+            //    mes = ci.DateTimeFormat.MonthNames[i].ToUpper();
+            //    Console.WriteLine(mes);
+            //}
+
+            //Console.ReadKey();
+            #endregion
+
+            #region CultureInfo - Threading
+
+            CultureInfo cit = Thread.CurrentThread.CurrentCulture;
+            CultureInfo citUI = Thread.CurrentThread.CurrentUICulture;
+
+            Thread.CurrentThread.CurrentCulture = ci;
+            Thread.CurrentThread.CurrentUICulture = ci;
+
+            CultureInfo cinv = CultureInfo.InvariantCulture;
+
+            Console.WriteLine(System.Globalization_Exemple.Main.DESCRICAO);
             Console.ReadKey();
             #endregion
+
 
         }
     }
