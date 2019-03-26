@@ -25,10 +25,11 @@ namespace System.XML_Exemple
             if (!File.Exists(arquivo))
             {
                 
-                XmlNode nodeRoot = xmlDocument.CreateElement("Contato");
+                XmlNode nodeRoot = xmlDocument.CreateElement("Contatos");
                 xmlDocument.AppendChild(nodeRoot);
                 xmlDocument.Save(arquivo);
             }
+            ReadAgenda();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -36,10 +37,17 @@ namespace System.XML_Exemple
             xmlDocument.Load(arquivo);
             XmlNode nodeNome = xmlDocument.CreateElement("Nome");
             XmlNode nodeTelefone = xmlDocument.CreateElement("Telefone");
+
             nodeNome.InnerText = txtNome.Text;
             nodeTelefone.InnerText = txtTelefone.Text;
-            xmlDocument.SelectSingleNode("/Contato").AppendChild(nodeNome);
-            xmlDocument.SelectSingleNode("/Contato").AppendChild(nodeTelefone);
+
+            XmlNode nodeContato = xmlDocument.CreateElement("Contato");
+            xmlDocument.SelectSingleNode("/Contatos").PrependChild(nodeContato);
+
+            
+
+            xmlDocument.SelectSingleNode("/Contatos/Contato").AppendChild(nodeNome);
+            xmlDocument.SelectSingleNode("/Contatos/Contato").AppendChild(nodeTelefone);
             xmlDocument.Save(arquivo);
             LimparCampos();
         }
@@ -49,6 +57,16 @@ namespace System.XML_Exemple
             txtNome.Text = string.Empty;
             txtTelefone.Text = string.Empty;
             txtNome.Focus();
+        }
+
+        private void ReadAgenda()
+        {
+            xmlDocument.Load(arquivo);
+            foreach(XmlNode node in xmlDocument.SelectNodes("Contatos"))
+            {
+                lblAgenda.Text += "Nome:" + node.SelectNodes("Nome"); 
+            }
+            
         }
     }
 }

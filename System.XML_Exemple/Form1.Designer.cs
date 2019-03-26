@@ -33,6 +33,7 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblAgenda = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtTelefone
@@ -77,11 +78,20 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Telefone:";
             // 
+            // lblAgenda
+            // 
+            this.lblAgenda.AutoSize = true;
+            this.lblAgenda.Location = new System.Drawing.Point(182, 31);
+            this.lblAgenda.Name = "lblAgenda";
+            this.lblAgenda.Size = new System.Drawing.Size(0, 13);
+            this.lblAgenda.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 450);
+            this.Controls.Add(this.lblAgenda);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSalvar);
@@ -101,6 +111,7 @@
         private Windows.Forms.Button btnSalvar;
         private Windows.Forms.Label label1;
         private Windows.Forms.Label label2;
+        private Windows.Forms.Label lblAgenda;
     }
 }
 

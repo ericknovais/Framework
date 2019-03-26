@@ -1,6 +1,10 @@
-<Contato>
-  <Nome>Erick</Nome>
-  <Telefone>11 947532313</Telefone>
-  <Nome>Maria Leide</Nome>
-  <Telefone>11 947532314</Telefone>
-</Contato>
+<Contatos>
+  <Contato>
+    <Nome>Maria Leide</Nome>
+    <Telefone>11 47532314</Telefone>
+  </Contato>
+  <Contato>
+    <Nome>Erick Novais </Nome>
+    <Telefone>11 47532313</Telefone>
+  </Contato>
+</Contatos>
