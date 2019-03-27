@@ -39,10 +39,11 @@
             // lblAgenda
             // 
             this.lblAgenda.AutoSize = true;
-            this.lblAgenda.Location = new System.Drawing.Point(142, 9);
+            this.lblAgenda.Location = new System.Drawing.Point(130, 9);
             this.lblAgenda.Name = "lblAgenda";
-            this.lblAgenda.Size = new System.Drawing.Size(0, 13);
+            this.lblAgenda.Size = new System.Drawing.Size(83, 13);
             this.lblAgenda.TabIndex = 0;
+            this.lblAgenda.Text = "Lista de agenda";
             // 
             // lblNome
             // 
@@ -90,7 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 450);
+            this.ClientSize = new System.Drawing.Size(368, 450);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtNome);

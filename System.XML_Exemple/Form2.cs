@@ -40,11 +40,12 @@ namespace System.XML_Exemple
         private void ReadAgenda()
         {
             xmlDoc.Load(arquivo);
+            lblAgenda.Text = string.Empty;
             lblAgenda.Text = "Contatos:\n\n";
             foreach (XmlNode node in xmlDoc.GetElementsByTagName("Contato"))
             {
-                lblAgenda.Text += "Nome:" + node.Attributes["nome"].Value + ", " +
-                                  "Telefone:" + node.Attributes["telefone"].Value + "\n";
+                lblAgenda.Text += "Nome: " + node.Attributes["nome"].Value + ", " +
+                                  "Telefone: " + node.Attributes["telefone"].Value + "\n";
             }
         }
 
