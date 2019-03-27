@@ -24,7 +24,7 @@ namespace System.XML_Exemple
 
             if (!File.Exists(arquivo))
             {
-                
+
                 XmlNode nodeRoot = xmlDocument.CreateElement("Contatos");
                 xmlDocument.AppendChild(nodeRoot);
                 xmlDocument.Save(arquivo);
@@ -44,12 +44,11 @@ namespace System.XML_Exemple
             XmlNode nodeContato = xmlDocument.CreateElement("Contato");
             xmlDocument.SelectSingleNode("/Contatos").PrependChild(nodeContato);
 
-            
-
             xmlDocument.SelectSingleNode("/Contatos/Contato").AppendChild(nodeNome);
             xmlDocument.SelectSingleNode("/Contatos/Contato").AppendChild(nodeTelefone);
             xmlDocument.Save(arquivo);
             LimparCampos();
+            ReadAgenda();
         }
 
         private void LimparCampos()
@@ -62,11 +61,13 @@ namespace System.XML_Exemple
         private void ReadAgenda()
         {
             xmlDocument.Load(arquivo);
-            foreach(XmlNode node in xmlDocument.SelectNodes("Contatos"))
+            lblAgenda.Text = "Contatos:\n\n";
+            foreach (XmlNode node in xmlDocument.GetElementsByTagName("Contato"))
             {
-                lblAgenda.Text += "Nome:" + node.SelectNodes("Nome"); 
+                lblAgenda.Text += node.ChildNodes[0].InnerText + ": " + 
+                                  node.ChildNodes[1].InnerText + "\n";
             }
-            
+
         }
     }
 }
