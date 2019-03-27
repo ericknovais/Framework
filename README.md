@@ -1,1 +1,1 @@
-# Framework é um repositorio de estudo do framework do Visual Studio C#. 
+# Framework é um repositorio para estudos do framework do Visual Studio C#  . 
