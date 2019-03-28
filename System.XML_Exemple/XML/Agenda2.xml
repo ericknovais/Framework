@@ -1,5 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Contatos>
-  <Contato nome="Casa" telefone="11 27380748"/>
-  <Contato nome="Maria Leide" telefone="11 47532314"/>
-  <Contato nome="Erick Novais" telefone="11 47532313"/>
+  <Contato nome="Casa" telefone="11 27380748" />
+  <Contato nome="Maria Leide" telefone="11 47532314" />
+  <Contato nome="Erick Novais" telefone="11 47532313" />
+  <Contato nome="Giovanna" telefone="11 965216976" />
+  <Contato nome="Casa 2 " telefone="11 38660748" />
 </Contatos>

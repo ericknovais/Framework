@@ -51,11 +51,15 @@ namespace System.XML_Exemple
 
         private void SalvarContato(string nome, string telefone)
         {
+            //Criação para um novo contato
             XElement element = new XElement("Contato");
             element.Add(new XAttribute("nome", nome));
             element.Add(new XAttribute("telefone", telefone));
-            xmlDoc.Load(arquivo);
-            //xmlDoc.AppendChild(element);
+            
+            //Trabalha com fragmentos do documento 
+            XElement xDoc = XElement.Load(arquivo);
+            xDoc.Add(element);
+            xDoc.Save(arquivo);
         }
 
         private void LimparCampos()
