@@ -22,7 +22,6 @@ namespace System.XML_Exemple
             InitializeComponent();
             if (!File.Exists(arquivo))
             {
-
                 XmlNode nodeRoot = xmlDoc.CreateElement("Contatos");
                 xmlDoc.AppendChild(nodeRoot);
                 xmlDoc.Save(arquivo);

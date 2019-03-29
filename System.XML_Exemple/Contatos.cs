@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace System.XML_Exemple
 {
+    [Serializable()]
+    [XmlRoot("Contatos")]
     public class Contatos
     {
-        public List<Contato> contatos;
+        [XmlElement("Contato")]
+        public List<Contato> Contato;
     }
 }

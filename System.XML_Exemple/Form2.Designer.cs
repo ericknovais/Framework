@@ -28,22 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblAgenda = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.lblAgenda = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // lblAgenda
-            // 
-            this.lblAgenda.AutoSize = true;
-            this.lblAgenda.Location = new System.Drawing.Point(130, 9);
-            this.lblAgenda.Name = "lblAgenda";
-            this.lblAgenda.Size = new System.Drawing.Size(83, 13);
-            this.lblAgenda.TabIndex = 0;
-            this.lblAgenda.Text = "Lista de agenda";
             // 
             // lblNome
             // 
@@ -87,6 +78,15 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // lblAgenda
+            // 
+            this.lblAgenda.AutoSize = true;
+            this.lblAgenda.Location = new System.Drawing.Point(130, 9);
+            this.lblAgenda.Name = "lblAgenda";
+            this.lblAgenda.Size = new System.Drawing.Size(83, 13);
+            this.lblAgenda.TabIndex = 0;
+            this.lblAgenda.Text = "Lista de agenda";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,12 +106,11 @@
         }
 
         #endregion
-
-        private Windows.Forms.Label lblAgenda;
         private Windows.Forms.Label lblNome;
         private Windows.Forms.Label lblTelefone;
         private Windows.Forms.TextBox txtNome;
         private Windows.Forms.TextBox txtTelefone;
         private Windows.Forms.Button btnSalvar;
+        private Windows.Forms.Label lblAgenda;
     }
 }
