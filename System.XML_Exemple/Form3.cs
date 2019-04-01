@@ -26,6 +26,7 @@ namespace System.XML_Exemple
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             Contato cont = new Contato();
+            cont.Id = this.NextId();
             cont.Nome = txtNome.Text;
             cont.Telefone = txtTelefone.Text;
 
@@ -33,7 +34,7 @@ namespace System.XML_Exemple
             //Serializador
             XElement xReturn = Serializador.Serialize<Contatos>(contatos);
             xReturn.Save(arquivo);
-            
+
             LimparCampos();
 
             ReadAgenda();
@@ -51,7 +52,7 @@ namespace System.XML_Exemple
             //Deserelizador
             elementX = XElement.Load(arquivo);
             contatos = Serializador.Deserialize<Contatos>(elementX);
-            
+
             lblContatos.Text = string.Empty;
             foreach (Contato cont in contatos.Contato)
             {
@@ -63,6 +64,12 @@ namespace System.XML_Exemple
         private void frmAgenda3_Load(object sender, EventArgs e)
         {
             ReadAgenda();
+        }
+
+        private int NextId()
+        {
+           int next = contatos.Contato[contatos.Contato.Count - 1].Id + 1
+            return next;
         }
     }
 }
