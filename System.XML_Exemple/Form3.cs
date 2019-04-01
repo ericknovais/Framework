@@ -11,7 +11,6 @@ namespace System.XML_Exemple
         public frmAgenda3()
         {
             InitializeComponent();
-            contatos = SContatos.Read();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -26,7 +25,26 @@ namespace System.XML_Exemple
 
             LimparCampos();
 
-            ReadAgenda();
+            BindlbxAgenda();
+
+        }
+
+        private void frmAgenda3_Load(object sender, EventArgs e)
+        {
+            BindlbxAgenda();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (lbxAgenda.SelectedIndex > -1)
+            {
+                Contato cont = contatos.Contato.Find(p => p.Id == (int)lbxAgenda.SelectedValue);
+
+            }
+            else
+            {
+                MessageBox.Show("Nenhum item selecionado");
+            }
         }
 
         private void LimparCampos()
@@ -36,19 +54,12 @@ namespace System.XML_Exemple
             txtNome.Focus();
         }
 
-        private void ReadAgenda()
+        private void BindlbxAgenda()
         {
-            lblContatos.Text = string.Empty;
-            foreach (Contato cont in contatos.Contato)
-            {
-                lblContatos.Text += "Nome: " + cont.Nome +
-                                    "\nTelefone: " + cont.Telefone + "\n\n";
-            }
-        }
-
-        private void frmAgenda3_Load(object sender, EventArgs e)
-        {
-            ReadAgenda();
+            contatos = SContatos.Read();
+            lbxAgenda.DataSource = contatos.Contato;
+            lbxAgenda.DisplayMember = "Nome";
+            lbxAgenda.ValueMember = "Id";
         }
 
         private int NextId()

@@ -33,7 +33,8 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.lblContatos = new System.Windows.Forms.Label();
+            this.lbxAgenda = new System.Windows.Forms.ListBox();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNome
@@ -78,21 +79,31 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // lblContatos
+            // lbxAgenda
             // 
-            this.lblContatos.AutoSize = true;
-            this.lblContatos.Location = new System.Drawing.Point(145, 9);
-            this.lblContatos.Name = "lblContatos";
-            this.lblContatos.Size = new System.Drawing.Size(91, 13);
-            this.lblContatos.TabIndex = 5;
-            this.lblContatos.Text = "Lista De Contatos";
+            this.lbxAgenda.FormattingEnabled = true;
+            this.lbxAgenda.Location = new System.Drawing.Point(172, 9);
+            this.lbxAgenda.Name = "lbxAgenda";
+            this.lbxAgenda.Size = new System.Drawing.Size(375, 368);
+            this.lbxAgenda.TabIndex = 5;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(472, 383);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.TabIndex = 6;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // frmAgenda3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 450);
-            this.Controls.Add(this.lblContatos);
+            this.ClientSize = new System.Drawing.Size(569, 413);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.lbxAgenda);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtNome);
@@ -113,6 +124,7 @@
         private Windows.Forms.TextBox txtNome;
         private Windows.Forms.TextBox txtTelefone;
         private Windows.Forms.Button btnSalvar;
-        private Windows.Forms.Label lblContatos;
+        private Windows.Forms.ListBox lbxAgenda;
+        private Windows.Forms.Button btnExcluir;
     }
 }
