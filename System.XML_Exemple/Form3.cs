@@ -1,27 +1,68 @@
-﻿using System.Windows.Forms;
+﻿using System.IO;
+using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 
 namespace System.XML_Exemple
 {
-    public partial class Form3 : Form
+    public partial class frmAgenda3 : Form
     {
         string arquivo = @"E:\Erick\Estudos\DevMidia C#\Framework\System.XML_Exemple\XML\Agenda.xml";
         XmlDocument xDoc = new XmlDocument();
-        public Form3()
+        XElement elementX;
+        Contatos contatos;
+
+        public frmAgenda3()
         {
             InitializeComponent();
+            if (!File.Exists(arquivo))
+            {
+                XmlNode nodeRoot = xDoc.CreateElement("Contatos");
+                xDoc.AppendChild(nodeRoot);
+                xDoc.Save(arquivo);
+            }
         }
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
-            //Deserelizador
-            XElement elementX = XElement.Load(arquivo);
-            Contatos contatos = Serializador.Deserialize<Contatos>(elementX);
+            Contato cont = new Contato();
+            cont.Nome = txtNome.Text;
+            cont.Telefone = txtTelefone.Text;
 
+            contatos.Contato.Add(cont);
             //Serializador
             XElement xReturn = Serializador.Serialize<Contatos>(contatos);
+            xReturn.Save(arquivo);
+            
+            LimparCampos();
 
+            ReadAgenda();
+        }
+
+        private void LimparCampos()
+        {
+            txtNome.Text = string.Empty;
+            txtTelefone.Text = string.Empty;
+            txtNome.Focus();
+        }
+
+        private void ReadAgenda()
+        {
+            //Deserelizador
+            elementX = XElement.Load(arquivo);
+            contatos = Serializador.Deserialize<Contatos>(elementX);
+            
+            lblContatos.Text = string.Empty;
+            foreach (Contato cont in contatos.Contato)
+            {
+                lblContatos.Text += "Nome: " + cont.Nome +
+                                    "\nTelefone: " + cont.Telefone + "\n\n";
+            }
+        }
+
+        private void frmAgenda3_Load(object sender, EventArgs e)
+        {
+            ReadAgenda();
         }
     }
 }
