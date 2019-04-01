@@ -55,10 +55,48 @@ namespace System.XML_Exemple
                             "Telefone: " + cont.Telefone);
         }
 
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            if (lbxAgenda.SelectedIndex > -1)
+            {
+                pnlIncluir.Visible = false;
+                pnlAlterar.Visible = true;
+
+                Contato cont = contatos.Contato.Find(p => p.Id == (int)lbxAgenda.SelectedValue);
+                lblId.Text = cont.Id.ToString();
+                txtNome.Text = cont.Nome;
+                txtTelefone.Text = cont.Telefone;
+            }
+            else
+            {
+                MessageBox.Show("Nenhum item selecionado");
+            }
+        }
+
+        private void btnSalvarAlterar_Click(object sender, EventArgs e)
+        {
+            Contato cont = new Contato();
+            cont.Id = int.Parse(lblId.Text) == 0 ? NextId() : int.Parse(lblId.Text);
+
+            contatos.Contato.Find(p => p.Id == cont.Id).Nome = txtNome.Text;
+            contatos.Contato.Find(p => p.Id == cont.Id).Telefone = txtTelefone.Text;
+            SContatos.Write(contatos);
+            BindlbxAgenda();
+            LimparCampos();
+            Cancelar();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Cancelar();
+            LimparCampos();
+        }
+
         private void LimparCampos()
         {
             txtNome.Text = string.Empty;
             txtTelefone.Text = string.Empty;
+            lblId.Text = string.Empty;
             txtNome.Focus();
         }
 
@@ -74,6 +112,12 @@ namespace System.XML_Exemple
         {
             int next = contatos.Contato[contatos.Contato.Count - 1].Id + 1;
             return next;
+        }
+
+        private void Cancelar()
+        {
+            pnlIncluir.Visible = true;
+            pnlAlterar.Visible = false;
         }
        
     }

@@ -1,11 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Contatos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Contato>
-    <Id>1</Id>
-    <Nome>Casa</Nome>
-    <Telefone>27380748</Telefone>
-  </Contato>
-  <Contato>
     <Id>2</Id>
     <Nome>Maria Leide</Nome>
     <Telefone>11 47532314</Telefone>
@@ -22,7 +17,17 @@
   </Contato>
   <Contato>
     <Id>5</Id>
+    <Nome>Mnha Casa</Nome>
+    <Telefone>11 27380748</Telefone>
+  </Contato>
+  <Contato>
+    <Id>6</Id>
     <Nome>Teste</Nome>
-    <Telefone>11 999999999</Telefone>
+    <Telefone>99 999999999</Telefone>
+  </Contato>
+  <Contato>
+    <Id>7</Id>
+    <Nome />
+    <Telefone />
   </Contato>
 </Contatos>
