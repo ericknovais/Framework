@@ -23,15 +23,14 @@ namespace System.XML_Exemple
             contatos.Contato.Add(cont);
             SContatos.Write(contatos);
 
-            LimparCampos();
+            this.LimparCampos();
 
-            BindlbxAgenda();
-
+            this.BindlbxAgenda();
         }
 
         private void frmAgenda3_Load(object sender, EventArgs e)
         {
-            BindlbxAgenda();
+            this.BindlbxAgenda();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -39,7 +38,9 @@ namespace System.XML_Exemple
             if (lbxAgenda.SelectedIndex > -1)
             {
                 Contato cont = contatos.Contato.Find(p => p.Id == (int)lbxAgenda.SelectedValue);
-
+                contatos.Contato.Remove(cont);
+                SContatos.Write(contatos);
+                this.BindlbxAgenda();
             }
             else
             {
@@ -66,6 +67,13 @@ namespace System.XML_Exemple
         {
             int next = contatos.Contato[contatos.Contato.Count - 1].Id + 1;
             return next;
+        }
+
+        private void lbxAgenda_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Contato cont = contatos.Contato.Find(p => p.Id == (int)lbxAgenda.SelectedValue);
+            MessageBox.Show("Nome: " + cont.Nome + "\n" +
+                            "Telefone: " + cont.Telefone);
         }
     }
 }

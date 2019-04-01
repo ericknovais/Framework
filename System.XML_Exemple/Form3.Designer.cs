@@ -86,6 +86,7 @@
             this.lbxAgenda.Name = "lbxAgenda";
             this.lbxAgenda.Size = new System.Drawing.Size(375, 368);
             this.lbxAgenda.TabIndex = 5;
+            this.lbxAgenda.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbxAgenda_MouseDoubleClick);
             // 
             // btnExcluir
             // 
