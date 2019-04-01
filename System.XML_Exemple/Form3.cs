@@ -7,20 +7,11 @@ namespace System.XML_Exemple
 {
     public partial class frmAgenda3 : Form
     {
-        string arquivo = @"E:\Erick\Estudos\DevMidia C#\Framework\System.XML_Exemple\XML\Agenda.xml";
-        XmlDocument xDoc = new XmlDocument();
-        XElement elementX;
-        Contatos contatos;
-
+        Contatos contatos = null;
         public frmAgenda3()
         {
             InitializeComponent();
-            if (!File.Exists(arquivo))
-            {
-                XmlNode nodeRoot = xDoc.CreateElement("Contatos");
-                xDoc.AppendChild(nodeRoot);
-                xDoc.Save(arquivo);
-            }
+            contatos = SContatos.Read();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -31,9 +22,7 @@ namespace System.XML_Exemple
             cont.Telefone = txtTelefone.Text;
 
             contatos.Contato.Add(cont);
-            //Serializador
-            XElement xReturn = Serializador.Serialize<Contatos>(contatos);
-            xReturn.Save(arquivo);
+            SContatos.Write(contatos);
 
             LimparCampos();
 
@@ -49,10 +38,6 @@ namespace System.XML_Exemple
 
         private void ReadAgenda()
         {
-            //Deserelizador
-            elementX = XElement.Load(arquivo);
-            contatos = Serializador.Deserialize<Contatos>(elementX);
-
             lblContatos.Text = string.Empty;
             foreach (Contato cont in contatos.Contato)
             {
@@ -68,7 +53,7 @@ namespace System.XML_Exemple
 
         private int NextId()
         {
-           int next = contatos.Contato[contatos.Contato.Count - 1].Id + 1
+            int next = contatos.Contato[contatos.Contato.Count - 1].Id + 1;
             return next;
         }
     }

@@ -20,4 +20,14 @@
     <Nome>Giovanna </Nome>
     <Telefone>11 969206267</Telefone>
   </Contato>
+  <Contato>
+    <Id>5</Id>
+    <Nome>Teste</Nome>
+    <Telefone>11 999999999</Telefone>
+  </Contato>
+  <Contato>
+    <Id>6</Id>
+    <Nome>teste2</Nome>
+    <Telefone>99 999999999</Telefone>
+  </Contato>
 </Contatos>
