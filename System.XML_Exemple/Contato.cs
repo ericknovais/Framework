@@ -16,5 +16,24 @@ namespace System.XML_Exemple
         public string Nome { get; set; }
         [XmlElement("Telefone")]
         public string Telefone { get; set; }
+
+        StringBuilder _msgErro = new StringBuilder();
+        public void ValidarContato()
+        {
+            CamposObrigatorios("Nome", Nome);
+            CamposObrigatorios("Telefone", Telefone);
+            if (_msgErro.Length > 0)
+            {
+                throw new Exception(_msgErro.ToString());
+            }
+        }
+
+        private void CamposObrigatorios(string nomoCampo, string valor)
+        {
+            if (string.IsNullOrWhiteSpace(valor))
+            {
+                _msgErro.AppendFormat("O campo {0} é obrigatório!{1}", nomoCampo, "\n");
+            }
+        }
     }
 }

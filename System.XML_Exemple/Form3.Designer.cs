@@ -32,16 +32,13 @@
             this.lblTelefone = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtTelefone = new System.Windows.Forms.TextBox();
-            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnIncluir_Alterar = new System.Windows.Forms.Button();
             this.lbxAgenda = new System.Windows.Forms.ListBox();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnSalvarAlterar = new System.Windows.Forms.Button();
-            this.pnlIncluir = new System.Windows.Forms.Panel();
             this.pnlAlterar = new System.Windows.Forms.Panel();
-            this.btnSelecionar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSelecionar = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
-            this.pnlIncluir.SuspendLayout();
             this.pnlAlterar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,15 +74,15 @@
             this.txtTelefone.Size = new System.Drawing.Size(100, 20);
             this.txtTelefone.TabIndex = 3;
             // 
-            // btnSalvar
+            // btnIncluir_Alterar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(0, 3);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 4;
-            this.btnSalvar.Text = "Incluir";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.btnIncluir_Alterar.Location = new System.Drawing.Point(15, 93);
+            this.btnIncluir_Alterar.Name = "btnIncluir_Alterar";
+            this.btnIncluir_Alterar.Size = new System.Drawing.Size(75, 23);
+            this.btnIncluir_Alterar.TabIndex = 4;
+            this.btnIncluir_Alterar.Text = "Incluir";
+            this.btnIncluir_Alterar.UseVisualStyleBackColor = true;
+            this.btnIncluir_Alterar.Click += new System.EventHandler(this.btnIncluir_Alterar_Click);
             // 
             // lbxAgenda
             // 
@@ -106,33 +103,24 @@
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // btnSalvarAlterar
-            // 
-            this.btnSalvarAlterar.Location = new System.Drawing.Point(0, 3);
-            this.btnSalvarAlterar.Name = "btnSalvarAlterar";
-            this.btnSalvarAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvarAlterar.TabIndex = 7;
-            this.btnSalvarAlterar.Text = "Alterar";
-            this.btnSalvarAlterar.UseVisualStyleBackColor = true;
-            this.btnSalvarAlterar.Click += new System.EventHandler(this.btnSalvarAlterar_Click);
-            // 
-            // pnlIncluir
-            // 
-            this.pnlIncluir.Controls.Add(this.btnSalvar);
-            this.pnlIncluir.Location = new System.Drawing.Point(15, 90);
-            this.pnlIncluir.Name = "pnlIncluir";
-            this.pnlIncluir.Size = new System.Drawing.Size(100, 30);
-            this.pnlIncluir.TabIndex = 8;
-            // 
             // pnlAlterar
             // 
             this.pnlAlterar.Controls.Add(this.btnCancelar);
-            this.pnlAlterar.Controls.Add(this.btnSalvarAlterar);
-            this.pnlAlterar.Location = new System.Drawing.Point(15, 90);
+            this.pnlAlterar.Location = new System.Drawing.Point(96, 90);
             this.pnlAlterar.Name = "pnlAlterar";
-            this.pnlAlterar.Size = new System.Drawing.Size(161, 30);
+            this.pnlAlterar.Size = new System.Drawing.Size(82, 30);
             this.pnlAlterar.TabIndex = 9;
             this.pnlAlterar.Visible = false;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(3, 3);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSelecionar
             // 
@@ -143,16 +131,6 @@
             this.btnSelecionar.Text = "Selecionar";
             this.btnSelecionar.UseVisualStyleBackColor = true;
             this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(81, 3);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblId
             // 
@@ -169,6 +147,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 413);
+            this.Controls.Add(this.btnIncluir_Alterar);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.btnExcluir);
@@ -178,11 +157,9 @@
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.pnlAlterar);
-            this.Controls.Add(this.pnlIncluir);
             this.Name = "frmAgenda3";
             this.Text = "Agenda";
             this.Load += new System.EventHandler(this.frmAgenda3_Load);
-            this.pnlIncluir.ResumeLayout(false);
             this.pnlAlterar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -195,11 +172,9 @@
         private Windows.Forms.Label lblTelefone;
         private Windows.Forms.TextBox txtNome;
         private Windows.Forms.TextBox txtTelefone;
-        private Windows.Forms.Button btnSalvar;
+        private Windows.Forms.Button btnIncluir_Alterar;
         private Windows.Forms.ListBox lbxAgenda;
         private Windows.Forms.Button btnExcluir;
-        private Windows.Forms.Button btnSalvarAlterar;
-        private Windows.Forms.Panel pnlIncluir;
         private Windows.Forms.Panel pnlAlterar;
         private Windows.Forms.Button btnCancelar;
         private Windows.Forms.Button btnSelecionar;

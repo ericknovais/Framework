@@ -13,19 +13,35 @@ namespace System.XML_Exemple
             InitializeComponent();
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void btnIncluir_Alterar_Click(object sender, EventArgs e)
         {
-            Contato cont = new Contato();
-            cont.Id = this.NextId();
-            cont.Nome = txtNome.Text;
-            cont.Telefone = txtTelefone.Text;
+            try
+            {
+                Contato cont = new Contato();
 
-            contatos.Contato.Add(cont);
-            SContatos.Write(contatos);
-
-            this.LimparCampos();
-
-            this.BindlbxAgenda();
+                if (int.Parse(lblId.Text) <= 0)
+                {
+                    cont.Id = this.NextId();
+                    cont.Nome = txtNome.Text;
+                    cont.Telefone = txtTelefone.Text;
+                    cont.ValidarContato();
+                    contatos.Contato.Add(cont);
+                }
+                else
+                {
+                    cont.Id = int.Parse(lblId.Text);
+                    contatos.Contato.Find(p => p.Id == cont.Id).Nome = txtNome.Text;
+                    contatos.Contato.Find(p => p.Id == cont.Id).Telefone = txtTelefone.Text;
+                    Cancelar();
+                }
+                SContatos.Write(contatos);
+                LimparCampos();
+                BindlbxAgenda();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void frmAgenda3_Load(object sender, EventArgs e)
@@ -38,9 +54,15 @@ namespace System.XML_Exemple
             if (lbxAgenda.SelectedIndex > -1)
             {
                 Contato cont = contatos.Contato.Find(p => p.Id == (int)lbxAgenda.SelectedValue);
-                contatos.Contato.Remove(cont);
-                SContatos.Write(contatos);
-                this.BindlbxAgenda();
+
+                if (MessageBox.Show("Excluir o contato " + cont.Nome.ToUpper() + " ?", "Excluir contato", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+                    contatos.Contato.Remove(cont);
+                    SContatos.Write(contatos);
+                    this.BindlbxAgenda();
+                    this.LimparCampos();
+                    this.Cancelar();
+                }
             }
             else
             {
@@ -52,14 +74,16 @@ namespace System.XML_Exemple
         {
             Contato cont = contatos.Contato.Find(p => p.Id == (int)lbxAgenda.SelectedValue);
             MessageBox.Show("Nome: " + cont.Nome + "\n" +
-                            "Telefone: " + cont.Telefone);
+                            "Telefone: " + cont.Telefone, "Contato",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information,
+                            MessageBoxDefaultButton.Button1);
         }
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
             if (lbxAgenda.SelectedIndex > -1)
             {
-                pnlIncluir.Visible = false;
+                btnIncluir_Alterar.Text = "Alterar";
                 pnlAlterar.Visible = true;
 
                 Contato cont = contatos.Contato.Find(p => p.Id == (int)lbxAgenda.SelectedValue);
@@ -73,30 +97,20 @@ namespace System.XML_Exemple
             }
         }
 
-        private void btnSalvarAlterar_Click(object sender, EventArgs e)
-        {
-            Contato cont = new Contato();
-            cont.Id = int.Parse(lblId.Text) == 0 ? NextId() : int.Parse(lblId.Text);
-
-            contatos.Contato.Find(p => p.Id == cont.Id).Nome = txtNome.Text;
-            contatos.Contato.Find(p => p.Id == cont.Id).Telefone = txtTelefone.Text;
-            SContatos.Write(contatos);
-            BindlbxAgenda();
-            LimparCampos();
-            Cancelar();
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Cancelar();
-            LimparCampos();
+            if (MessageBox.Show("Deseja cancelar essa operação ?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                LimparCampos();
+                Cancelar();
+            }
         }
 
         private void LimparCampos()
         {
             txtNome.Text = string.Empty;
             txtTelefone.Text = string.Empty;
-            lblId.Text = string.Empty;
+            lblId.Text = "0";
             txtNome.Focus();
         }
 
@@ -116,9 +130,9 @@ namespace System.XML_Exemple
 
         private void Cancelar()
         {
-            pnlIncluir.Visible = true;
+            btnIncluir_Alterar.Text = "Incluir";
             pnlAlterar.Visible = false;
         }
-       
+
     }
 }
