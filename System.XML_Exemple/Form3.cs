@@ -48,6 +48,13 @@ namespace System.XML_Exemple
             }
         }
 
+        private void lbxAgenda_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Contato cont = contatos.Contato.Find(p => p.Id == (int)lbxAgenda.SelectedValue);
+            MessageBox.Show("Nome: " + cont.Nome + "\n" +
+                            "Telefone: " + cont.Telefone);
+        }
+
         private void LimparCampos()
         {
             txtNome.Text = string.Empty;
@@ -68,12 +75,6 @@ namespace System.XML_Exemple
             int next = contatos.Contato[contatos.Contato.Count - 1].Id + 1;
             return next;
         }
-
-        private void lbxAgenda_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            Contato cont = contatos.Contato.Find(p => p.Id == (int)lbxAgenda.SelectedValue);
-            MessageBox.Show("Nome: " + cont.Nome + "\n" +
-                            "Telefone: " + cont.Telefone);
-        }
+       
     }
 }
