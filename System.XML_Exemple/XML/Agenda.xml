@@ -1,46 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Contatos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Contato>
-    <Id>3</Id>
-    <Nome>Erick Novais Da Hora</Nome>
-    <Telefone>(11)94753-2313</Telefone>
-    <Obs>Numero do meu celular</Obs>
-  </Contato>
-  <Contato>
-    <Id>4</Id>
-    <Nome>Giovanna </Nome>
-    <Telefone>11969206267</Telefone>
-    <Obs>Namorada</Obs>
-  </Contato>
-  <Contato>
-    <Id>5</Id>
-    <Nome>Mnha Casa</Nome>
-    <Telefone>1127380748</Telefone>
-  </Contato>
-  <Contato>
-    <Id>6</Id>
-    <Nome>Felipe Casa</Nome>
-    <Telefone>1138585813</Telefone>
-  </Contato>
-  <Contato>
-    <Id>9</Id>
-    <Nome>Maria Leide</Nome>
-    <Telefone>11947532314</Telefone>
-  </Contato>
-  <Contato>
-    <Id>10</Id>
-    <Nome>Caio</Nome>
-    <Telefone>11949231034</Telefone>
-  </Contato>
-  <Contato>
-    <Id>11</Id>
-    <Nome>Matheus </Nome>
-    <Telefone>11958064344</Telefone>
-  </Contato>
-  <Contato>
-    <Id>12</Id>
-    <Nome>teste</Nome>
-    <Telefone>(  ) 9999-9999</Telefone>
-    <Obs />
-  </Contato>
+  
+ 
 </Contatos>

@@ -25,9 +25,10 @@ namespace System.XML_Exemple
                 {
                     cont.Id = this.NextId();
                     cont.Nome = txtNome.Text;
-                    cont.Telefone.Add(txtFoneResidencial.Text);
-                    cont.Telefone.Add(txtFoneComercial.Text);
-                    cont.Telefone.Add(txtFoneCelular.Text);
+                    cont.Telefone = new List<Telefone>();
+                    cont.Telefone.Add(new Telefone(0, txtFoneResidencial.Text));
+                    cont.Telefone.Add(new Telefone(1, txtFoneComercial.Text));
+                    cont.Telefone.Add(new Telefone(2,txtFoneCelular.Text));
                     cont.Obs = txtObs.Text;
                     cont.ValidarContato();
                     contatos.Contato.Add(cont);
@@ -37,10 +38,9 @@ namespace System.XML_Exemple
                     cont.Id = int.Parse(lblId.Text) == 0 ? this.NextId() : int.Parse(lblId.Text);
                     cont = contatos.Contato.Find(p => p.Id == cont.Id);
                     cont.Nome = txtNome.Text;
-                    cont.Telefone = new List<string>();
-                    cont.Telefone.Add(txtFoneResidencial.Text);
-                    cont.Telefone.Add(txtFoneComercial.Text);
-                    cont.Telefone.Add(txtFoneCelular.Text);
+                    //cont.Telefone.Add(txtFoneResidencial.Text);
+                    //cont.Telefone.Add(txtFoneComercial.Text);
+                    //cont.Telefone.Add(txtFoneCelular.Text);
                     cont.Obs = txtObs.Text;
                     cont.ValidarContato();
                     Cancelar();
@@ -102,9 +102,12 @@ namespace System.XML_Exemple
                 Contato cont = contatos.Contato.Find(p => p.Id == (int)lbxAgenda.SelectedValue);
                 lblId.Text = cont.Id.ToString();
                 txtNome.Text = cont.Nome;
-                txtFoneResidencial.Text = cont.Telefone.ElementAt(0);
-                txtFoneComercial.Text = cont.Telefone.ElementAt(1);
-                txtFoneCelular.Text = cont.Telefone.ElementAt(2);
+                if (cont.Telefone.Count > 0)
+                {
+                    //txtFoneResidencial.Text = cont.Telefone.ElementAt(0);
+                    //txtFoneComercial.Text = cont.Telefone.ElementAt(1);
+                    //txtFoneCelular.Text = cont.Telefone.ElementAt(2);
+                }
                 txtObs.Text = cont.Obs;
             }
             else
@@ -127,6 +130,8 @@ namespace System.XML_Exemple
             lblId.Text = "0";
             txtNome.Text = string.Empty;
             txtFoneResidencial.Text = string.Empty;
+            txtFoneComercial.Text = string.Empty;
+            txtFoneCelular.Text = string.Empty;
             txtObs.Text = string.Empty;
             txtNome.Focus();
         }
