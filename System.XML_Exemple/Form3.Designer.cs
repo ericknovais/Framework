@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lblNome = new System.Windows.Forms.Label();
-            this.lblTelefone = new System.Windows.Forms.Label();
+            this.lblFoneResidencial = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.btnIncluir_Alterar = new System.Windows.Forms.Button();
             this.lbxAgenda = new System.Windows.Forms.ListBox();
@@ -41,7 +41,11 @@
             this.txtObs = new System.Windows.Forms.TextBox();
             this.lblObs = new System.Windows.Forms.Label();
             this.lblContatos = new System.Windows.Forms.Label();
-            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.txtFoneResidencial = new System.Windows.Forms.MaskedTextBox();
+            this.txtFoneComercial = new System.Windows.Forms.MaskedTextBox();
+            this.lblFoneComercial = new System.Windows.Forms.Label();
+            this.txtFoneCelular = new System.Windows.Forms.MaskedTextBox();
+            this.lblFoneCelular = new System.Windows.Forms.Label();
             this.pnlAlterar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,15 +58,15 @@
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
             // 
-            // lblTelefone
+            // lblFoneResidencial
             // 
-            this.lblTelefone.AutoSize = true;
-            this.lblTelefone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTelefone.Location = new System.Drawing.Point(12, 48);
-            this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(52, 13);
-            this.lblTelefone.TabIndex = 3;
-            this.lblTelefone.Text = "Telefone:";
+            this.lblFoneResidencial.AutoSize = true;
+            this.lblFoneResidencial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblFoneResidencial.Location = new System.Drawing.Point(12, 48);
+            this.lblFoneResidencial.Name = "lblFoneResidencial";
+            this.lblFoneResidencial.Size = new System.Drawing.Size(92, 13);
+            this.lblFoneResidencial.TabIndex = 3;
+            this.lblFoneResidencial.Text = "Fone Residencial:";
             // 
             // txtNome
             // 
@@ -73,7 +77,7 @@
             // 
             // btnIncluir_Alterar
             // 
-            this.btnIncluir_Alterar.Location = new System.Drawing.Point(12, 129);
+            this.btnIncluir_Alterar.Location = new System.Drawing.Point(12, 207);
             this.btnIncluir_Alterar.Name = "btnIncluir_Alterar";
             this.btnIncluir_Alterar.Size = new System.Drawing.Size(75, 23);
             this.btnIncluir_Alterar.TabIndex = 7;
@@ -103,7 +107,7 @@
             // pnlAlterar
             // 
             this.pnlAlterar.Controls.Add(this.btnCancelar);
-            this.pnlAlterar.Location = new System.Drawing.Point(93, 129);
+            this.pnlAlterar.Location = new System.Drawing.Point(93, 207);
             this.pnlAlterar.Name = "pnlAlterar";
             this.pnlAlterar.Size = new System.Drawing.Size(85, 23);
             this.pnlAlterar.TabIndex = 12;
@@ -141,7 +145,7 @@
             // 
             // txtObs
             // 
-            this.txtObs.Location = new System.Drawing.Point(15, 103);
+            this.txtObs.Location = new System.Drawing.Point(15, 181);
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(293, 20);
             this.txtObs.TabIndex = 6;
@@ -149,7 +153,7 @@
             // lblObs
             // 
             this.lblObs.AutoSize = true;
-            this.lblObs.Location = new System.Drawing.Point(12, 87);
+            this.lblObs.Location = new System.Drawing.Point(12, 165);
             this.lblObs.Name = "lblObs";
             this.lblObs.Size = new System.Drawing.Size(73, 13);
             this.lblObs.TabIndex = 5;
@@ -164,20 +168,60 @@
             this.lblContatos.TabIndex = 8;
             this.lblContatos.Text = "Contatos:";
             // 
-            // txtTelefone
+            // txtFoneResidencial
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(15, 64);
-            this.txtTelefone.Mask = "(99)90000-0000";
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefone.TabIndex = 4;
+            this.txtFoneResidencial.Location = new System.Drawing.Point(15, 64);
+            this.txtFoneResidencial.Mask = "(99)0000-0000";
+            this.txtFoneResidencial.Name = "txtFoneResidencial";
+            this.txtFoneResidencial.Size = new System.Drawing.Size(100, 20);
+            this.txtFoneResidencial.TabIndex = 4;
+            // 
+            // txtFoneComercial
+            // 
+            this.txtFoneComercial.Location = new System.Drawing.Point(16, 103);
+            this.txtFoneComercial.Mask = "(99)0000-0000";
+            this.txtFoneComercial.Name = "txtFoneComercial";
+            this.txtFoneComercial.Size = new System.Drawing.Size(100, 20);
+            this.txtFoneComercial.TabIndex = 14;
+            // 
+            // lblFoneComercial
+            // 
+            this.lblFoneComercial.AutoSize = true;
+            this.lblFoneComercial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblFoneComercial.Location = new System.Drawing.Point(13, 87);
+            this.lblFoneComercial.Name = "lblFoneComercial";
+            this.lblFoneComercial.Size = new System.Drawing.Size(83, 13);
+            this.lblFoneComercial.TabIndex = 13;
+            this.lblFoneComercial.Text = "Fone Comercial:";
+            // 
+            // txtFoneCelular
+            // 
+            this.txtFoneCelular.Location = new System.Drawing.Point(16, 142);
+            this.txtFoneCelular.Mask = "(99)90000-0000";
+            this.txtFoneCelular.Name = "txtFoneCelular";
+            this.txtFoneCelular.Size = new System.Drawing.Size(100, 20);
+            this.txtFoneCelular.TabIndex = 16;
+            // 
+            // lblFoneCelular
+            // 
+            this.lblFoneCelular.AutoSize = true;
+            this.lblFoneCelular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblFoneCelular.Location = new System.Drawing.Point(13, 126);
+            this.lblFoneCelular.Name = "lblFoneCelular";
+            this.lblFoneCelular.Size = new System.Drawing.Size(83, 13);
+            this.lblFoneCelular.TabIndex = 15;
+            this.lblFoneCelular.Text = "Fone Comercial:";
             // 
             // frmAgenda3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 413);
-            this.Controls.Add(this.txtTelefone);
+            this.Controls.Add(this.txtFoneCelular);
+            this.Controls.Add(this.lblFoneCelular);
+            this.Controls.Add(this.txtFoneComercial);
+            this.Controls.Add(this.lblFoneComercial);
+            this.Controls.Add(this.txtFoneResidencial);
             this.Controls.Add(this.lblContatos);
             this.Controls.Add(this.txtObs);
             this.Controls.Add(this.lblObs);
@@ -187,7 +231,7 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.lbxAgenda);
             this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.lblTelefone);
+            this.Controls.Add(this.lblFoneResidencial);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.pnlAlterar);
             this.Name = "frmAgenda3";
@@ -202,7 +246,7 @@
         #endregion
 
         private Windows.Forms.Label lblNome;
-        private Windows.Forms.Label lblTelefone;
+        private Windows.Forms.Label lblFoneResidencial;
         private Windows.Forms.TextBox txtNome;
         private Windows.Forms.Button btnIncluir_Alterar;
         private Windows.Forms.ListBox lbxAgenda;
@@ -214,6 +258,10 @@
         private Windows.Forms.TextBox txtObs;
         private Windows.Forms.Label lblObs;
         private Windows.Forms.Label lblContatos;
-        private Windows.Forms.MaskedTextBox txtTelefone;
+        private Windows.Forms.MaskedTextBox txtFoneResidencial;
+        private Windows.Forms.MaskedTextBox txtFoneComercial;
+        private Windows.Forms.Label lblFoneComercial;
+        private Windows.Forms.MaskedTextBox txtFoneCelular;
+        private Windows.Forms.Label lblFoneCelular;
     }
 }

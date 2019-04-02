@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
@@ -23,7 +25,9 @@ namespace System.XML_Exemple
                 {
                     cont.Id = this.NextId();
                     cont.Nome = txtNome.Text;
-                    cont.Telefone = txtTelefone.Text;
+                    cont.Telefone.Add(txtFoneResidencial.Text);
+                    cont.Telefone.Add(txtFoneComercial.Text);
+                    cont.Telefone.Add(txtFoneCelular.Text);
                     cont.Obs = txtObs.Text;
                     cont.ValidarContato();
                     contatos.Contato.Add(cont);
@@ -33,7 +37,10 @@ namespace System.XML_Exemple
                     cont.Id = int.Parse(lblId.Text) == 0 ? this.NextId() : int.Parse(lblId.Text);
                     cont = contatos.Contato.Find(p => p.Id == cont.Id);
                     cont.Nome = txtNome.Text;
-                    cont.Telefone = txtTelefone.Text;
+                    cont.Telefone = new List<string>();
+                    cont.Telefone.Add(txtFoneResidencial.Text);
+                    cont.Telefone.Add(txtFoneComercial.Text);
+                    cont.Telefone.Add(txtFoneCelular.Text);
                     cont.Obs = txtObs.Text;
                     cont.ValidarContato();
                     Cancelar();
@@ -95,7 +102,9 @@ namespace System.XML_Exemple
                 Contato cont = contatos.Contato.Find(p => p.Id == (int)lbxAgenda.SelectedValue);
                 lblId.Text = cont.Id.ToString();
                 txtNome.Text = cont.Nome;
-                txtTelefone.Text = cont.Telefone;
+                txtFoneResidencial.Text = cont.Telefone.ElementAt(0);
+                txtFoneComercial.Text = cont.Telefone.ElementAt(1);
+                txtFoneCelular.Text = cont.Telefone.ElementAt(2);
                 txtObs.Text = cont.Obs;
             }
             else
@@ -117,7 +126,7 @@ namespace System.XML_Exemple
         {
             lblId.Text = "0";
             txtNome.Text = string.Empty;
-            txtTelefone.Text = string.Empty;
+            txtFoneResidencial.Text = string.Empty;
             txtObs.Text = string.Empty;
             txtNome.Focus();
         }

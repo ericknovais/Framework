@@ -14,8 +14,8 @@ namespace System.XML_Exemple
         public int Id { get; set; }
         [XmlElement("Nome")]
         public string Nome { get; set; }
-        [XmlElement("Telefone")]
-        public string Telefone { get; set; }
+        [XmlArray("Telefone")]
+        public List<string> Telefone { get; set; }
         [XmlElement("Obs")]
         public string Obs { get; set; }
 
@@ -25,7 +25,7 @@ namespace System.XML_Exemple
         {
              _msgErro.Clear() ;
             CamposObrigatorios("Nome", Nome);
-            CamposObrigatorios("Telefone", Telefone);
+            //CamposObrigatorios("Telefone", Telefone);
             if (_msgErro.Length > 0)
             {
                 throw new Exception(_msgErro.ToString());
