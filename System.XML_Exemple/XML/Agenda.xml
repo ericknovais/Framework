@@ -30,8 +30,25 @@
     </Telefone>
     <Telefone>
       <Tipo>2</Tipo>
-      <Numero>(11)94753-2313</Numero>
+      <Numero>(11)94753-2314</Numero>
     </Telefone>
     <Obs>M?e</Obs>
+  </Contato>
+  <Contato>
+    <Id>4</Id>
+    <Nome>Teste</Nome>
+    <Telefone>
+      <Tipo>0</Tipo>
+      <Numero>(99)9999-9999</Numero>
+    </Telefone>
+    <Telefone>
+      <Tipo>1</Tipo>
+      <Numero>(99)9999-9999</Numero>
+    </Telefone>
+    <Telefone>
+      <Tipo>2</Tipo>
+      <Numero>(11)94753-2313</Numero>
+    </Telefone>
+    <Obs>Contato de Teste</Obs>
   </Contato>
 </Contatos>
