@@ -16,10 +16,14 @@ namespace System.XML_Exemple
         public string Nome { get; set; }
         [XmlElement("Telefone")]
         public string Telefone { get; set; }
+        [XmlElement("Obs")]
+        public string Obs { get; set; }
 
         StringBuilder _msgErro = new StringBuilder();
+
         public void ValidarContato()
         {
+             _msgErro.Clear() ;
             CamposObrigatorios("Nome", Nome);
             CamposObrigatorios("Telefone", Telefone);
             if (_msgErro.Length > 0)

@@ -31,7 +31,6 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.btnIncluir_Alterar = new System.Windows.Forms.Button();
             this.lbxAgenda = new System.Windows.Forms.ListBox();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -39,6 +38,10 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
+            this.txtObs = new System.Windows.Forms.TextBox();
+            this.lblObs = new System.Windows.Forms.Label();
+            this.lblContatos = new System.Windows.Forms.Label();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.pnlAlterar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,10 +57,11 @@
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
+            this.lblTelefone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTelefone.Location = new System.Drawing.Point(12, 48);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(52, 13);
-            this.lblTelefone.TabIndex = 1;
+            this.lblTelefone.TabIndex = 3;
             this.lblTelefone.Text = "Telefone:";
             // 
             // txtNome
@@ -67,19 +71,12 @@
             this.txtNome.Size = new System.Drawing.Size(100, 20);
             this.txtNome.TabIndex = 2;
             // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(15, 64);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefone.TabIndex = 3;
-            // 
             // btnIncluir_Alterar
             // 
-            this.btnIncluir_Alterar.Location = new System.Drawing.Point(15, 93);
+            this.btnIncluir_Alterar.Location = new System.Drawing.Point(12, 129);
             this.btnIncluir_Alterar.Name = "btnIncluir_Alterar";
             this.btnIncluir_Alterar.Size = new System.Drawing.Size(75, 23);
-            this.btnIncluir_Alterar.TabIndex = 4;
+            this.btnIncluir_Alterar.TabIndex = 7;
             this.btnIncluir_Alterar.Text = "Incluir";
             this.btnIncluir_Alterar.UseVisualStyleBackColor = true;
             this.btnIncluir_Alterar.Click += new System.EventHandler(this.btnIncluir_Alterar_Click);
@@ -87,10 +84,10 @@
             // lbxAgenda
             // 
             this.lbxAgenda.FormattingEnabled = true;
-            this.lbxAgenda.Location = new System.Drawing.Point(182, 9);
+            this.lbxAgenda.Location = new System.Drawing.Point(314, 25);
             this.lbxAgenda.Name = "lbxAgenda";
-            this.lbxAgenda.Size = new System.Drawing.Size(375, 368);
-            this.lbxAgenda.TabIndex = 5;
+            this.lbxAgenda.Size = new System.Drawing.Size(243, 355);
+            this.lbxAgenda.TabIndex = 9;
             this.lbxAgenda.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbxAgenda_MouseDoubleClick);
             // 
             // btnExcluir
@@ -98,7 +95,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(482, 383);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
-            this.btnExcluir.TabIndex = 6;
+            this.btnExcluir.TabIndex = 11;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
@@ -106,18 +103,18 @@
             // pnlAlterar
             // 
             this.pnlAlterar.Controls.Add(this.btnCancelar);
-            this.pnlAlterar.Location = new System.Drawing.Point(96, 90);
+            this.pnlAlterar.Location = new System.Drawing.Point(93, 129);
             this.pnlAlterar.Name = "pnlAlterar";
-            this.pnlAlterar.Size = new System.Drawing.Size(82, 30);
-            this.pnlAlterar.TabIndex = 9;
+            this.pnlAlterar.Size = new System.Drawing.Size(85, 23);
+            this.pnlAlterar.TabIndex = 12;
             this.pnlAlterar.Visible = false;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(3, 3);
+            this.btnCancelar.Location = new System.Drawing.Point(0, 0);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.TabIndex = 0;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -138,21 +135,57 @@
             this.lblId.Location = new System.Drawing.Point(80, 9);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(13, 13);
-            this.lblId.TabIndex = 11;
+            this.lblId.TabIndex = 1;
             this.lblId.Text = "0";
             this.lblId.Visible = false;
+            // 
+            // txtObs
+            // 
+            this.txtObs.Location = new System.Drawing.Point(15, 103);
+            this.txtObs.Name = "txtObs";
+            this.txtObs.Size = new System.Drawing.Size(293, 20);
+            this.txtObs.TabIndex = 6;
+            // 
+            // lblObs
+            // 
+            this.lblObs.AutoSize = true;
+            this.lblObs.Location = new System.Drawing.Point(12, 87);
+            this.lblObs.Name = "lblObs";
+            this.lblObs.Size = new System.Drawing.Size(73, 13);
+            this.lblObs.TabIndex = 5;
+            this.lblObs.Text = "Observações:";
+            // 
+            // lblContatos
+            // 
+            this.lblContatos.AutoSize = true;
+            this.lblContatos.Location = new System.Drawing.Point(311, 9);
+            this.lblContatos.Name = "lblContatos";
+            this.lblContatos.Size = new System.Drawing.Size(52, 13);
+            this.lblContatos.TabIndex = 8;
+            this.lblContatos.Text = "Contatos:";
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(15, 64);
+            this.txtTelefone.Mask = "(99)90000-0000";
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefone.TabIndex = 4;
             // 
             // frmAgenda3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 413);
+            this.Controls.Add(this.txtTelefone);
+            this.Controls.Add(this.lblContatos);
+            this.Controls.Add(this.txtObs);
+            this.Controls.Add(this.lblObs);
             this.Controls.Add(this.btnIncluir_Alterar);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.lbxAgenda);
-            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.lblNome);
@@ -171,7 +204,6 @@
         private Windows.Forms.Label lblNome;
         private Windows.Forms.Label lblTelefone;
         private Windows.Forms.TextBox txtNome;
-        private Windows.Forms.TextBox txtTelefone;
         private Windows.Forms.Button btnIncluir_Alterar;
         private Windows.Forms.ListBox lbxAgenda;
         private Windows.Forms.Button btnExcluir;
@@ -179,5 +211,9 @@
         private Windows.Forms.Button btnCancelar;
         private Windows.Forms.Button btnSelecionar;
         private Windows.Forms.Label lblId;
+        private Windows.Forms.TextBox txtObs;
+        private Windows.Forms.Label lblObs;
+        private Windows.Forms.Label lblContatos;
+        private Windows.Forms.MaskedTextBox txtTelefone;
     }
 }

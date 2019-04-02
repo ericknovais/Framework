@@ -24,14 +24,18 @@ namespace System.XML_Exemple
                     cont.Id = this.NextId();
                     cont.Nome = txtNome.Text;
                     cont.Telefone = txtTelefone.Text;
+                    cont.Obs = txtObs.Text;
                     cont.ValidarContato();
                     contatos.Contato.Add(cont);
                 }
                 else
                 {
-                    cont.Id = int.Parse(lblId.Text);
-                    contatos.Contato.Find(p => p.Id == cont.Id).Nome = txtNome.Text;
-                    contatos.Contato.Find(p => p.Id == cont.Id).Telefone = txtTelefone.Text;
+                    cont.Id = int.Parse(lblId.Text) == 0 ? this.NextId() : int.Parse(lblId.Text);
+                    cont = contatos.Contato.Find(p => p.Id == cont.Id);
+                    cont.Nome = txtNome.Text;
+                    cont.Telefone = txtTelefone.Text;
+                    cont.Obs = txtObs.Text;
+                    cont.ValidarContato();
                     Cancelar();
                 }
                 SContatos.Write(contatos);
@@ -74,7 +78,9 @@ namespace System.XML_Exemple
         {
             Contato cont = contatos.Contato.Find(p => p.Id == (int)lbxAgenda.SelectedValue);
             MessageBox.Show("Nome: " + cont.Nome + "\n" +
-                            "Telefone: " + cont.Telefone, "Contato",
+                            "Telefone: " + cont.Telefone + "\n" +
+                            "Observações: " + cont.Obs,
+                            "Contato",
                             MessageBoxButtons.OK, MessageBoxIcon.Information,
                             MessageBoxDefaultButton.Button1);
         }
@@ -90,6 +96,7 @@ namespace System.XML_Exemple
                 lblId.Text = cont.Id.ToString();
                 txtNome.Text = cont.Nome;
                 txtTelefone.Text = cont.Telefone;
+                txtObs.Text = cont.Obs;
             }
             else
             {
@@ -108,9 +115,10 @@ namespace System.XML_Exemple
 
         private void LimparCampos()
         {
+            lblId.Text = "0";
             txtNome.Text = string.Empty;
             txtTelefone.Text = string.Empty;
-            lblId.Text = "0";
+            txtObs.Text = string.Empty;
             txtNome.Focus();
         }
 
