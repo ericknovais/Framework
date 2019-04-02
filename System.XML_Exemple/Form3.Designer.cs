@@ -46,6 +46,7 @@
             this.lblFoneComercial = new System.Windows.Forms.Label();
             this.txtFoneCelular = new System.Windows.Forms.MaskedTextBox();
             this.lblFoneCelular = new System.Windows.Forms.Label();
+            this.lblvalNome = new System.Windows.Forms.Label();
             this.pnlAlterar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,15 +73,17 @@
             // 
             this.txtNome.Location = new System.Drawing.Point(15, 25);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 20);
+            this.txtNome.Size = new System.Drawing.Size(276, 20);
             this.txtNome.TabIndex = 2;
+            this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
+            this.txtNome.Validated += new System.EventHandler(this.txtNome_Validated);
             // 
             // btnIncluir_Alterar
             // 
             this.btnIncluir_Alterar.Location = new System.Drawing.Point(12, 207);
             this.btnIncluir_Alterar.Name = "btnIncluir_Alterar";
             this.btnIncluir_Alterar.Size = new System.Drawing.Size(75, 23);
-            this.btnIncluir_Alterar.TabIndex = 7;
+            this.btnIncluir_Alterar.TabIndex = 11;
             this.btnIncluir_Alterar.Text = "Incluir";
             this.btnIncluir_Alterar.UseVisualStyleBackColor = true;
             this.btnIncluir_Alterar.Click += new System.EventHandler(this.btnIncluir_Alterar_Click);
@@ -91,7 +94,7 @@
             this.lbxAgenda.Location = new System.Drawing.Point(314, 25);
             this.lbxAgenda.Name = "lbxAgenda";
             this.lbxAgenda.Size = new System.Drawing.Size(243, 355);
-            this.lbxAgenda.TabIndex = 9;
+            this.lbxAgenda.TabIndex = 15;
             this.lbxAgenda.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbxAgenda_MouseDoubleClick);
             // 
             // btnExcluir
@@ -99,7 +102,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(482, 383);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
-            this.btnExcluir.TabIndex = 11;
+            this.btnExcluir.TabIndex = 13;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
@@ -128,7 +131,7 @@
             this.btnSelecionar.Location = new System.Drawing.Point(401, 383);
             this.btnSelecionar.Name = "btnSelecionar";
             this.btnSelecionar.Size = new System.Drawing.Size(75, 23);
-            this.btnSelecionar.TabIndex = 10;
+            this.btnSelecionar.TabIndex = 12;
             this.btnSelecionar.Text = "Selecionar";
             this.btnSelecionar.UseVisualStyleBackColor = true;
             this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
@@ -147,8 +150,10 @@
             // 
             this.txtObs.Location = new System.Drawing.Point(15, 181);
             this.txtObs.Name = "txtObs";
-            this.txtObs.Size = new System.Drawing.Size(293, 20);
-            this.txtObs.TabIndex = 6;
+            this.txtObs.Size = new System.Drawing.Size(276, 20);
+            this.txtObs.TabIndex = 10;
+            this.txtObs.Enter += new System.EventHandler(this.txtObs_Enter);
+            this.txtObs.Validated += new System.EventHandler(this.txtObs_Validated);
             // 
             // lblObs
             // 
@@ -156,7 +161,7 @@
             this.lblObs.Location = new System.Drawing.Point(12, 165);
             this.lblObs.Name = "lblObs";
             this.lblObs.Size = new System.Drawing.Size(73, 13);
-            this.lblObs.TabIndex = 5;
+            this.lblObs.TabIndex = 9;
             this.lblObs.Text = "Observações:";
             // 
             // lblContatos
@@ -165,7 +170,7 @@
             this.lblContatos.Location = new System.Drawing.Point(311, 9);
             this.lblContatos.Name = "lblContatos";
             this.lblContatos.Size = new System.Drawing.Size(52, 13);
-            this.lblContatos.TabIndex = 8;
+            this.lblContatos.TabIndex = 14;
             this.lblContatos.Text = "Contatos:";
             // 
             // txtFoneResidencial
@@ -173,16 +178,23 @@
             this.txtFoneResidencial.Location = new System.Drawing.Point(15, 64);
             this.txtFoneResidencial.Mask = "(99)0000-0000";
             this.txtFoneResidencial.Name = "txtFoneResidencial";
-            this.txtFoneResidencial.Size = new System.Drawing.Size(100, 20);
+            this.txtFoneResidencial.Size = new System.Drawing.Size(89, 20);
             this.txtFoneResidencial.TabIndex = 4;
+            this.txtFoneResidencial.Tag = "99";
+            this.txtFoneResidencial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtFoneResidencial.Enter += new System.EventHandler(this.txtFoneResidencial_Enter);
+            this.txtFoneResidencial.Validated += new System.EventHandler(this.txtFoneResidencial_Validated);
             // 
             // txtFoneComercial
             // 
             this.txtFoneComercial.Location = new System.Drawing.Point(16, 103);
             this.txtFoneComercial.Mask = "(99)0000-0000";
             this.txtFoneComercial.Name = "txtFoneComercial";
-            this.txtFoneComercial.Size = new System.Drawing.Size(100, 20);
-            this.txtFoneComercial.TabIndex = 14;
+            this.txtFoneComercial.Size = new System.Drawing.Size(88, 20);
+            this.txtFoneComercial.TabIndex = 6;
+            this.txtFoneComercial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtFoneComercial.Enter += new System.EventHandler(this.txtFoneComercial_Enter);
+            this.txtFoneComercial.Validated += new System.EventHandler(this.txtFoneComercial_Validated);
             // 
             // lblFoneComercial
             // 
@@ -191,7 +203,7 @@
             this.lblFoneComercial.Location = new System.Drawing.Point(13, 87);
             this.lblFoneComercial.Name = "lblFoneComercial";
             this.lblFoneComercial.Size = new System.Drawing.Size(83, 13);
-            this.lblFoneComercial.TabIndex = 13;
+            this.lblFoneComercial.TabIndex = 5;
             this.lblFoneComercial.Text = "Fone Comercial:";
             // 
             // txtFoneCelular
@@ -199,8 +211,11 @@
             this.txtFoneCelular.Location = new System.Drawing.Point(16, 142);
             this.txtFoneCelular.Mask = "(99)90000-0000";
             this.txtFoneCelular.Name = "txtFoneCelular";
-            this.txtFoneCelular.Size = new System.Drawing.Size(100, 20);
-            this.txtFoneCelular.TabIndex = 16;
+            this.txtFoneCelular.Size = new System.Drawing.Size(88, 20);
+            this.txtFoneCelular.TabIndex = 8;
+            this.txtFoneCelular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtFoneCelular.Enter += new System.EventHandler(this.txtFoneCelular_Enter);
+            this.txtFoneCelular.Validated += new System.EventHandler(this.txtFoneCelular_Validated);
             // 
             // lblFoneCelular
             // 
@@ -209,14 +224,27 @@
             this.lblFoneCelular.Location = new System.Drawing.Point(13, 126);
             this.lblFoneCelular.Name = "lblFoneCelular";
             this.lblFoneCelular.Size = new System.Drawing.Size(69, 13);
-            this.lblFoneCelular.TabIndex = 15;
+            this.lblFoneCelular.TabIndex = 7;
             this.lblFoneCelular.Text = "Fone Celular:";
+            // 
+            // lblvalNome
+            // 
+            this.lblvalNome.AutoSize = true;
+            this.lblvalNome.BackColor = System.Drawing.SystemColors.Control;
+            this.lblvalNome.ForeColor = System.Drawing.Color.Red;
+            this.lblvalNome.Location = new System.Drawing.Point(297, 25);
+            this.lblvalNome.Name = "lblvalNome";
+            this.lblvalNome.Size = new System.Drawing.Size(11, 13);
+            this.lblvalNome.TabIndex = 16;
+            this.lblvalNome.Text = "*";
+            this.lblvalNome.Visible = false;
             // 
             // frmAgenda3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 413);
+            this.Controls.Add(this.lblvalNome);
             this.Controls.Add(this.txtFoneCelular);
             this.Controls.Add(this.lblFoneCelular);
             this.Controls.Add(this.txtFoneComercial);
@@ -263,5 +291,6 @@
         private Windows.Forms.Label lblFoneComercial;
         private Windows.Forms.MaskedTextBox txtFoneCelular;
         private Windows.Forms.Label lblFoneCelular;
+        private Windows.Forms.Label lblvalNome;
     }
 }

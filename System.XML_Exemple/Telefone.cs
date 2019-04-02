@@ -21,5 +21,9 @@ namespace System.XML_Exemple
         public int Tipo { get; set; }
         [XmlElement("Numero")]
         public string Numero { get; set; }
+
+        public static string ExNumResidencial = "(99)9999-9999";
+        public static string ExNumComercial   = "(99)9999-9999";
+        public static string ExNumCelular     = "(99)99999-9999";
     }
 }

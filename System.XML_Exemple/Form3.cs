@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -10,10 +11,14 @@ namespace System.XML_Exemple
     public partial class frmAgenda3 : Form
     {
         Contatos contatos = null;
+
         public frmAgenda3()
         {
             InitializeComponent();
+            CarregaTextoExemplo();
         }
+
+        #region Evento dos Botões
 
         private void btnIncluir_Alterar_Click(object sender, EventArgs e)
         {
@@ -23,18 +28,20 @@ namespace System.XML_Exemple
 
                 if (int.Parse(lblId.Text) <= 0)
                 {
+                    //ClearCampos();
                     cont.Id = this.NextId();
                     cont.Nome = txtNome.Text;
                     cont.Telefone = new List<Telefone>();
                     cont.Telefone.Add(new Telefone((int)TiposTelefone.Residencial, txtFoneResidencial.Text));
                     cont.Telefone.Add(new Telefone((int)TiposTelefone.Comercial, txtFoneComercial.Text));
-                    cont.Telefone.Add(new Telefone((int)TiposTelefone.Celular,txtFoneCelular.Text));
+                    cont.Telefone.Add(new Telefone((int)TiposTelefone.Celular, txtFoneCelular.Text));
                     cont.Obs = txtObs.Text;
                     cont.ValidarContato();
                     contatos.Contato.Add(cont);
                 }
                 else
                 {
+                   // ClearCampos();
                     cont.Id = int.Parse(lblId.Text) == 0 ? this.NextId() : int.Parse(lblId.Text);
                     cont = contatos.Contato.Find(p => p.Id == cont.Id);
                     cont.Nome = txtNome.Text;
@@ -46,12 +53,14 @@ namespace System.XML_Exemple
                     Cancelar();
                 }
                 SContatos.Write(contatos);
-                LimparCampos();
+                ClearCampos();
                 BindlbxAgenda();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lblvalNome.Visible = true;
+
             }
         }
 
@@ -71,7 +80,7 @@ namespace System.XML_Exemple
                     contatos.Contato.Remove(cont);
                     SContatos.Write(contatos);
                     this.BindlbxAgenda();
-                    this.LimparCampos();
+                    this.ClearCampos();
                     this.Cancelar();
                 }
             }
@@ -94,6 +103,7 @@ namespace System.XML_Exemple
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
+            CarregaTextoExemplo();
             if (lbxAgenda.SelectedIndex > -1)
             {
                 btnIncluir_Alterar.Text = "Alterar";
@@ -109,6 +119,7 @@ namespace System.XML_Exemple
                     txtFoneCelular.Text = cont.Telefone[(int)TiposTelefone.Celular].Numero;
                 }
                 txtObs.Text = cont.Obs;
+                CorCampo();
             }
             else
             {
@@ -120,20 +131,25 @@ namespace System.XML_Exemple
         {
             if (MessageBox.Show("Deseja cancelar essa operação ?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
-                LimparCampos();
+                ClearCampos();
                 Cancelar();
             }
         }
 
-        private void LimparCampos()
+        #endregion
+
+        #region Metodos
+        private void ClearCampos()
         {
+            lblvalNome.Visible = false;
             lblId.Text = "0";
-            txtNome.Text = string.Empty;
-            txtFoneResidencial.Text = string.Empty;
-            txtFoneComercial.Text = string.Empty;
-            txtFoneCelular.Text = string.Empty;
-            txtObs.Text = string.Empty;
+            txtNome.Clear();
+            txtFoneResidencial.Clear();
+            txtFoneComercial.Clear();
+            txtFoneCelular.Clear();
+            txtObs.Clear();
             txtNome.Focus();
+            CarregaTextoExemplo();
         }
 
         private void BindlbxAgenda()
@@ -155,6 +171,147 @@ namespace System.XML_Exemple
             btnIncluir_Alterar.Text = "Incluir";
             pnlAlterar.Visible = false;
         }
+
+        private void CorCampo()
+        {
+            if (txtNome.Text != Contato.ExNome) txtNome.ForeColor = Color.Black;
+            if (txtFoneResidencial.Text != Telefone.ExNumResidencial) txtFoneResidencial.ForeColor = Color.Black;
+            if (txtFoneComercial.Text != Telefone.ExNumComercial) txtFoneComercial.ForeColor = Color.Black; ;
+            if (txtFoneCelular.Text != Telefone.ExNumCelular) txtFoneCelular.ForeColor = Color.Black;
+            if (txtObs.Text != Contato.ExObs) txtObs.ForeColor = Color.Black;
+        }
+        #endregion
+
+        #region Validações Campos
+        private void txtNome_Validated(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNome.Text) || txtNome.Text == Contato.ExNome)
+            {
+                ExemploNome();
+            }
+            else
+            {
+                lblvalNome.Visible = false;
+            }
+        }
+
+        private void txtNome_Enter(object sender, EventArgs e)
+        {
+            if (txtNome.Text == Contato.ExNome)
+            {
+                txtNome.Text = string.Empty;
+            }
+            txtNome.ForeColor = Color.Black;
+        }
+
+        private void txtFoneResidencial_Validated(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtFoneResidencial.Text) || txtFoneResidencial.Text == Telefone.ExNumResidencial || txtFoneResidencial.Text == "(  )    -")
+            {
+                ExemploFoneResidencial();
+            }
+        }
+
+        private void txtFoneResidencial_Enter(object sender, EventArgs e)
+        {
+            if (txtFoneResidencial.Text == Telefone.ExNumResidencial)
+            {
+                txtFoneResidencial.Text = string.Empty;
+            }
+            txtFoneResidencial.ForeColor = Color.Black;
+        }
+
+        private void txtFoneComercial_Validated(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtFoneComercial.Text) || txtFoneComercial.Text == Telefone.ExNumComercial|| txtFoneComercial.Text == "(  )    -")
+            {
+                ExemploFoneComercial();
+            }
+        }
+
+        private void txtFoneComercial_Enter(object sender, EventArgs e)
+        {
+            if (txtFoneComercial.Text == Telefone.ExNumComercial)
+            {
+                txtFoneComercial.Text = string.Empty;
+            }
+            txtFoneComercial.ForeColor = Drawing.Color.Black;
+        }
+
+        private void txtFoneCelular_Validated(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtFoneCelular.Text) || txtFoneCelular.Text == Telefone.ExNumComercial || txtFoneCelular.Text == "(  )     -")
+            {
+                ExemploFoneCelular();
+            }
+        }
+
+        private void txtFoneCelular_Enter(object sender, EventArgs e)
+        {
+            if (txtFoneCelular.Text == Telefone.ExNumCelular)
+            {
+                txtFoneCelular.Clear();
+            }
+            txtFoneCelular.ForeColor = Drawing.Color.Black;
+        }
+
+        private void txtObs_Validated(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtObs.Text) || txtObs.Text == Contato.ExObs)
+            {
+                ExemploObs();
+            }
+        }
+
+        private void txtObs_Enter(object sender, EventArgs e)
+        {
+            if (txtObs.Text == Contato.ExObs)
+            {
+                txtObs.Text = string.Empty;
+            }
+            txtObs.ForeColor = Drawing.Color.Black;
+        }
+        #endregion
+
+        #region Metodos de Exemplos
+        private void CarregaTextoExemplo()
+        {
+            ExemploNome();
+            ExemploFoneResidencial();
+            ExemploFoneComercial();
+            ExemploFoneCelular();
+            ExemploObs();
+        }
+        private void ExemploNome()
+        {
+            txtNome.Text = Contato.ExNome;
+            txtNome.ForeColor = Drawing.Color.Silver;
+        }
+        private void ExemploFoneResidencial()
+        {
+            txtFoneResidencial.Text = Telefone.ExNumResidencial;
+            txtFoneResidencial.ForeColor = Drawing.Color.Silver;
+        }
+        private void ExemploFoneComercial()
+        {
+            txtFoneComercial.Text = Telefone.ExNumComercial;
+            txtFoneComercial.ForeColor = Drawing.Color.Silver;
+        }
+        private void ExemploFoneCelular()
+        {
+            txtFoneCelular.Text = Telefone.ExNumCelular;
+            txtFoneCelular.ForeColor = Drawing.Color.Silver;
+        }
+        private void ExemploObs()
+        {
+            txtObs.Text = Contato.ExObs;
+            txtObs.ForeColor = Drawing.Color.Silver;
+        }
+
+
+
+
+        #endregion
 
     }
 }
