@@ -1,5 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Contatos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  
- 
+  <Contato>
+    <Id>1</Id>
+    <Nome>Erick Novais da Hora</Nome>
+    <Telefone>
+      <Tipo>0</Tipo>
+      <Numero>(11)2738-0748</Numero>
+    </Telefone>
+    <Telefone>
+      <Tipo>1</Tipo>
+      <Numero>(11)3966-0748</Numero>
+    </Telefone>
+    <Telefone>
+      <Tipo>2</Tipo>
+      <Numero>(11)94753-2313</Numero>
+    </Telefone>
+    <Obs>Meus Numeros</Obs>
+  </Contato>
+  <Contato>
+    <Id>2</Id>
+    <Nome>Maria Leide</Nome>
+    <Telefone>
+      <Tipo>0</Tipo>
+      <Numero>(11)2738-0748</Numero>
+    </Telefone>
+    <Telefone>
+      <Tipo>1</Tipo>
+      <Numero>(11)3966-0748</Numero>
+    </Telefone>
+    <Telefone>
+      <Tipo>2</Tipo>
+      <Numero>(11)94753-2313</Numero>
+    </Telefone>
+    <Obs>M?e</Obs>
+  </Contato>
 </Contatos>

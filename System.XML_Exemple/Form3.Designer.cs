@@ -208,9 +208,9 @@
             this.lblFoneCelular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblFoneCelular.Location = new System.Drawing.Point(13, 126);
             this.lblFoneCelular.Name = "lblFoneCelular";
-            this.lblFoneCelular.Size = new System.Drawing.Size(83, 13);
+            this.lblFoneCelular.Size = new System.Drawing.Size(69, 13);
             this.lblFoneCelular.TabIndex = 15;
-            this.lblFoneCelular.Text = "Fone Comercial:";
+            this.lblFoneCelular.Text = "Fone Celular:";
             // 
             // frmAgenda3
             // 
