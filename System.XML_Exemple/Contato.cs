@@ -19,9 +19,10 @@ namespace System.XML_Exemple
         [XmlElement("Obs")]
         public string Obs { get; set; }
 
-        StringBuilder _msgErro = new StringBuilder();
+        private StringBuilder _msgErro = new StringBuilder();
         public static string ExNome = "Ex:Pedro da Silva";
         public static string ExObs = "Ex:Contato pessoal";
+
         public void ValidarContato()
         {
              _msgErro.Clear() ;

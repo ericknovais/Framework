@@ -16,7 +16,7 @@ namespace System.XML_Exemple
         {
             InitializeComponent();
             CarregaTextoExemplo();
-         
+
         }
 
         #region Evento dos Botões
@@ -42,7 +42,7 @@ namespace System.XML_Exemple
                 }
                 else
                 {
-                   // ClearCampos();
+                    // ClearCampos();
                     cont.Id = int.Parse(lblId.Text) == 0 ? this.NextId() : int.Parse(lblId.Text);
                     cont = contatos.Contato.Find(p => p.Id == cont.Id);
                     cont.Nome = txtNome.Text;
@@ -55,7 +55,7 @@ namespace System.XML_Exemple
                 }
                 SContatos.Write(contatos);
                 ClearCampos();
-                BindlbxAgenda();
+                BindlbxAgenda(SContatos.Read());
             }
             catch (Exception ex)
             {
@@ -67,7 +67,7 @@ namespace System.XML_Exemple
 
         private void frmAgenda3_Load(object sender, EventArgs e)
         {
-            this.BindlbxAgenda();
+            this.BindlbxAgenda(SContatos.Read());
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace System.XML_Exemple
                 {
                     contatos.Contato.Remove(cont);
                     SContatos.Write(contatos);
-                    this.BindlbxAgenda();
+                    this.BindlbxAgenda(SContatos.Read());
                     this.ClearCampos();
                     this.Cancelar();
                 }
@@ -154,9 +154,8 @@ namespace System.XML_Exemple
             CarregaTextoExemplo();
         }
 
-        private void BindlbxAgenda()
+        private void BindlbxAgenda(Contatos contatos)
         {
-            contatos = SContatos.Read();
             lbxAgenda.DataSource = contatos.Contato;
             lbxAgenda.DisplayMember = "Nome";
             lbxAgenda.ValueMember = "Id";
@@ -226,7 +225,7 @@ namespace System.XML_Exemple
 
         private void txtFoneComercial_Validated(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtFoneComercial.Text) || txtFoneComercial.Text == Telefone.ExNumComercial|| txtFoneComercial.Text == "(  )    -")
+            if (string.IsNullOrEmpty(txtFoneComercial.Text) || txtFoneComercial.Text == Telefone.ExNumComercial || txtFoneComercial.Text == "(  )    -")
             {
                 ExemploFoneComercial();
             }
@@ -319,7 +318,16 @@ namespace System.XML_Exemple
         private void btnBusca_Click(object sender, EventArgs e)
         {
             frmBuscaContato buscaContato = new frmBuscaContato();
+            buscaContato.FormClosed += BuscaContato_FormClosed;
             buscaContato.ShowDialog();
+        }
+
+        private void BuscaContato_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (FiltroContatos.Filtro.Count > 0)
+            {
+                //this.BindlbxAgenda(FiltroContatos.Filtro);
+            }
         }
     }
 }

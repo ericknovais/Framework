@@ -59,7 +59,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = global::System.XML_Exemple.Properties.Resources.edit_find;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(530, 12);
+            this.btnBuscar.Location = new System.Drawing.Point(526, 8);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(89, 35);
             this.btnBuscar.TabIndex = 2;
@@ -82,7 +82,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 181);
+            this.ClientSize = new System.Drawing.Size(634, 181);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.cmbCampo);

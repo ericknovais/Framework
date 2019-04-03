@@ -26,6 +26,8 @@ namespace System.XML_Exemple
             {
                 resultado = contatos.Contato.Where(p => p.Nome == txtBusca.Text).ToList<Contato>();
             }
+
+            FiltroContatos.Filtro = resultado;
         }
     }
 }
