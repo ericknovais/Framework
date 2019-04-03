@@ -316,5 +316,10 @@ namespace System.XML_Exemple
 
         #endregion
 
+        private void btnBusca_Click(object sender, EventArgs e)
+        {
+            frmBuscaContato buscaContato = new frmBuscaContato();
+            buscaContato.ShowDialog();
+        }
     }
 }
