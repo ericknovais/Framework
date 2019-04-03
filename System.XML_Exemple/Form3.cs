@@ -55,7 +55,7 @@ namespace System.XML_Exemple
                 }
                 SContatos.Write(contatos);
                 ClearCampos();
-                BindlbxAgenda(SContatos.Read());
+                BindlbxAgenda(SContatos.Read().Contato);
             }
             catch (Exception ex)
             {
@@ -67,7 +67,8 @@ namespace System.XML_Exemple
 
         private void frmAgenda3_Load(object sender, EventArgs e)
         {
-            this.BindlbxAgenda(SContatos.Read());
+            contatos = SContatos.Read();
+            this.BindlbxAgenda(contatos.Contato);
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -80,7 +81,7 @@ namespace System.XML_Exemple
                 {
                     contatos.Contato.Remove(cont);
                     SContatos.Write(contatos);
-                    this.BindlbxAgenda(SContatos.Read());
+                    this.BindlbxAgenda(SContatos.Read().Contato);
                     this.ClearCampos();
                     this.Cancelar();
                 }
@@ -154,9 +155,9 @@ namespace System.XML_Exemple
             CarregaTextoExemplo();
         }
 
-        private void BindlbxAgenda(Contatos contatos)
+        private void BindlbxAgenda(List<Contato> contato)
         {
-            lbxAgenda.DataSource = contatos.Contato;
+            lbxAgenda.DataSource = contato;
             lbxAgenda.DisplayMember = "Nome";
             lbxAgenda.ValueMember = "Id";
         }
@@ -326,7 +327,7 @@ namespace System.XML_Exemple
         {
             if (FiltroContatos.Filtro.Count > 0)
             {
-                //this.BindlbxAgenda(FiltroContatos.Filtro);
+                this.BindlbxAgenda(FiltroContatos.Filtro);
             }
         }
     }

@@ -15,7 +15,7 @@
       <Tipo>2</Tipo>
       <Numero>(11)94753-2313</Numero>
     </Telefone>
-    <Obs>Meus Numeros</Obs>
+    <Obs>Meus numeros passoais</Obs>
   </Contato>
   <Contato>
     <Id>2</Id>
@@ -35,7 +35,7 @@
     <Obs>M?e</Obs>
   </Contato>
   <Contato>
-    <Id>4</Id>
+    <Id>3</Id>
     <Nome>Teste</Nome>
     <Telefone>
       <Tipo>0</Tipo>
@@ -47,8 +47,8 @@
     </Telefone>
     <Telefone>
       <Tipo>2</Tipo>
-      <Numero>(11)94753-2313</Numero>
+      <Numero>(99)99999-9999</Numero>
     </Telefone>
-    <Obs>Contato de Teste</Obs>
+    <Obs>Ex:Contato pessoal</Obs>
   </Contato>
 </Contatos>

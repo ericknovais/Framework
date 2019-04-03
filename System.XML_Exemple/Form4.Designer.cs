@@ -46,6 +46,9 @@
             // 
             this.cmbCampo.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCampo.FormattingEnabled = true;
+            this.cmbCampo.Items.AddRange(new object[] {
+            "Nome",
+            "Telefone"});
             this.cmbCampo.Location = new System.Drawing.Point(380, 15);
             this.cmbCampo.Name = "cmbCampo";
             this.cmbCampo.Size = new System.Drawing.Size(140, 23);

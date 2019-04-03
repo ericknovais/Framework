@@ -22,7 +22,7 @@ namespace System.XML_Exemple
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             contatos = SContatos.Read();
-            if (cmbCampo.SelectedText == "Nome")
+            if (cmbCampo.Text == "Nome")
             {
                 resultado = contatos.Contato.Where(p => p.Nome == txtBusca.Text).ToList<Contato>();
             }
