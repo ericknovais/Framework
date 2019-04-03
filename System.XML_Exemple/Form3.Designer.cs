@@ -31,11 +31,8 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.lblFoneResidencial = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.btnIncluir_Alterar = new System.Windows.Forms.Button();
             this.lbxAgenda = new System.Windows.Forms.ListBox();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.pnlAlterar = new System.Windows.Forms.Panel();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
             this.txtObs = new System.Windows.Forms.TextBox();
@@ -47,6 +44,9 @@
             this.txtFoneCelular = new System.Windows.Forms.MaskedTextBox();
             this.lblFoneCelular = new System.Windows.Forms.Label();
             this.lblvalNome = new System.Windows.Forms.Label();
+            this.btnIncluir_Alterar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.pnlAlterar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@
             this.lblNome.AutoSize = true;
             this.lblNome.Location = new System.Drawing.Point(15, 9);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(46, 17);
+            this.lblNome.Size = new System.Drawing.Size(57, 21);
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
             // 
@@ -65,7 +65,7 @@
             this.lblFoneResidencial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblFoneResidencial.Location = new System.Drawing.Point(15, 56);
             this.lblFoneResidencial.Name = "lblFoneResidencial";
-            this.lblFoneResidencial.Size = new System.Drawing.Size(105, 17);
+            this.lblFoneResidencial.Size = new System.Drawing.Size(130, 21);
             this.lblFoneResidencial.TabIndex = 3;
             this.lblFoneResidencial.Text = "Fone Residencial:";
             // 
@@ -73,71 +73,29 @@
             // 
             this.txtNome.Location = new System.Drawing.Point(15, 29);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(321, 24);
+            this.txtNome.Size = new System.Drawing.Size(321, 28);
             this.txtNome.TabIndex = 2;
             this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
             this.txtNome.Validated += new System.EventHandler(this.txtNome_Validated);
             // 
-            // btnIncluir_Alterar
-            // 
-            this.btnIncluir_Alterar.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.btnIncluir_Alterar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnIncluir_Alterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIncluir_Alterar.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncluir_Alterar.Location = new System.Drawing.Point(15, 245);
-            this.btnIncluir_Alterar.Name = "btnIncluir_Alterar";
-            this.btnIncluir_Alterar.Size = new System.Drawing.Size(87, 35);
-            this.btnIncluir_Alterar.TabIndex = 11;
-            this.btnIncluir_Alterar.Text = "Incluir";
-            this.btnIncluir_Alterar.UseVisualStyleBackColor = true;
-            this.btnIncluir_Alterar.Click += new System.EventHandler(this.btnIncluir_Alterar_Click);
-            // 
             // lbxAgenda
             // 
             this.lbxAgenda.FormattingEnabled = true;
-            this.lbxAgenda.ItemHeight = 15;
+            this.lbxAgenda.ItemHeight = 21;
             this.lbxAgenda.Location = new System.Drawing.Point(366, 29);
             this.lbxAgenda.Name = "lbxAgenda";
-            this.lbxAgenda.Size = new System.Drawing.Size(286, 409);
+            this.lbxAgenda.Size = new System.Drawing.Size(286, 403);
             this.lbxAgenda.TabIndex = 15;
             this.lbxAgenda.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbxAgenda_MouseDoubleClick);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(565, 442);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(87, 35);
-            this.btnExcluir.TabIndex = 13;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // pnlAlterar
             // 
             this.pnlAlterar.Controls.Add(this.btnCancelar);
-            this.pnlAlterar.Location = new System.Drawing.Point(108, 245);
+            this.pnlAlterar.Location = new System.Drawing.Point(119, 246);
             this.pnlAlterar.Name = "pnlAlterar";
-            this.pnlAlterar.Size = new System.Drawing.Size(99, 35);
+            this.pnlAlterar.Size = new System.Drawing.Size(127, 35);
             this.pnlAlterar.TabIndex = 12;
             this.pnlAlterar.Visible = false;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(0, 0);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(87, 35);
-            this.btnCancelar.TabIndex = 0;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSelecionar
             // 
@@ -145,11 +103,14 @@
             this.btnSelecionar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnSelecionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelecionar.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelecionar.Location = new System.Drawing.Point(472, 442);
+            this.btnSelecionar.Image = global::System.XML_Exemple.Properties.Resources.edit_select_all_002;
+            this.btnSelecionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSelecionar.Location = new System.Drawing.Point(426, 438);
             this.btnSelecionar.Name = "btnSelecionar";
-            this.btnSelecionar.Size = new System.Drawing.Size(87, 35);
+            this.btnSelecionar.Size = new System.Drawing.Size(122, 35);
             this.btnSelecionar.TabIndex = 12;
             this.btnSelecionar.Text = "Selecionar";
+            this.btnSelecionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSelecionar.UseVisualStyleBackColor = true;
             this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
             // 
@@ -158,7 +119,7 @@
             this.lblId.AutoSize = true;
             this.lblId.Location = new System.Drawing.Point(85, 9);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(15, 17);
+            this.lblId.Size = new System.Drawing.Size(19, 21);
             this.lblId.TabIndex = 1;
             this.lblId.Text = "0";
             this.lblId.Visible = false;
@@ -167,7 +128,7 @@
             // 
             this.txtObs.Location = new System.Drawing.Point(15, 215);
             this.txtObs.Name = "txtObs";
-            this.txtObs.Size = new System.Drawing.Size(321, 24);
+            this.txtObs.Size = new System.Drawing.Size(321, 28);
             this.txtObs.TabIndex = 10;
             this.txtObs.Enter += new System.EventHandler(this.txtObs_Enter);
             this.txtObs.Validated += new System.EventHandler(this.txtObs_Validated);
@@ -177,7 +138,7 @@
             this.lblObs.AutoSize = true;
             this.lblObs.Location = new System.Drawing.Point(15, 195);
             this.lblObs.Name = "lblObs";
-            this.lblObs.Size = new System.Drawing.Size(83, 17);
+            this.lblObs.Size = new System.Drawing.Size(103, 21);
             this.lblObs.TabIndex = 9;
             this.lblObs.Text = "Observações:";
             // 
@@ -186,7 +147,7 @@
             this.lblContatos.AutoSize = true;
             this.lblContatos.Location = new System.Drawing.Point(363, 10);
             this.lblContatos.Name = "lblContatos";
-            this.lblContatos.Size = new System.Drawing.Size(62, 17);
+            this.lblContatos.Size = new System.Drawing.Size(78, 21);
             this.lblContatos.TabIndex = 14;
             this.lblContatos.Text = "Contatos:";
             // 
@@ -195,7 +156,7 @@
             this.txtFoneResidencial.Location = new System.Drawing.Point(15, 74);
             this.txtFoneResidencial.Mask = "(99)0000-0000";
             this.txtFoneResidencial.Name = "txtFoneResidencial";
-            this.txtFoneResidencial.Size = new System.Drawing.Size(103, 24);
+            this.txtFoneResidencial.Size = new System.Drawing.Size(103, 28);
             this.txtFoneResidencial.TabIndex = 4;
             this.txtFoneResidencial.Tag = "99";
             this.txtFoneResidencial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -207,7 +168,7 @@
             this.txtFoneComercial.Location = new System.Drawing.Point(15, 121);
             this.txtFoneComercial.Mask = "(99)0000-0000";
             this.txtFoneComercial.Name = "txtFoneComercial";
-            this.txtFoneComercial.Size = new System.Drawing.Size(102, 24);
+            this.txtFoneComercial.Size = new System.Drawing.Size(102, 28);
             this.txtFoneComercial.TabIndex = 6;
             this.txtFoneComercial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFoneComercial.Enter += new System.EventHandler(this.txtFoneComercial_Enter);
@@ -219,7 +180,7 @@
             this.lblFoneComercial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblFoneComercial.Location = new System.Drawing.Point(15, 101);
             this.lblFoneComercial.Name = "lblFoneComercial";
-            this.lblFoneComercial.Size = new System.Drawing.Size(98, 17);
+            this.lblFoneComercial.Size = new System.Drawing.Size(122, 21);
             this.lblFoneComercial.TabIndex = 5;
             this.lblFoneComercial.Text = "Fone Comercial:";
             // 
@@ -228,7 +189,7 @@
             this.txtFoneCelular.Location = new System.Drawing.Point(15, 168);
             this.txtFoneCelular.Mask = "(99)90000-0000";
             this.txtFoneCelular.Name = "txtFoneCelular";
-            this.txtFoneCelular.Size = new System.Drawing.Size(102, 24);
+            this.txtFoneCelular.Size = new System.Drawing.Size(102, 28);
             this.txtFoneCelular.TabIndex = 8;
             this.txtFoneCelular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFoneCelular.Enter += new System.EventHandler(this.txtFoneCelular_Enter);
@@ -240,7 +201,7 @@
             this.lblFoneCelular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblFoneCelular.Location = new System.Drawing.Point(15, 148);
             this.lblFoneCelular.Name = "lblFoneCelular";
-            this.lblFoneCelular.Size = new System.Drawing.Size(81, 17);
+            this.lblFoneCelular.Size = new System.Drawing.Size(101, 21);
             this.lblFoneCelular.TabIndex = 7;
             this.lblFoneCelular.Text = "Fone Celular:";
             // 
@@ -251,14 +212,66 @@
             this.lblvalNome.ForeColor = System.Drawing.Color.Red;
             this.lblvalNome.Location = new System.Drawing.Point(346, 29);
             this.lblvalNome.Name = "lblvalNome";
-            this.lblvalNome.Size = new System.Drawing.Size(15, 17);
+            this.lblvalNome.Size = new System.Drawing.Size(18, 21);
             this.lblvalNome.TabIndex = 16;
             this.lblvalNome.Text = "*";
             this.lblvalNome.Visible = false;
             // 
+            // btnIncluir_Alterar
+            // 
+            this.btnIncluir_Alterar.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnIncluir_Alterar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnIncluir_Alterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncluir_Alterar.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncluir_Alterar.Image = global::System.XML_Exemple.Properties.Resources.add_32x32;
+            this.btnIncluir_Alterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIncluir_Alterar.Location = new System.Drawing.Point(15, 246);
+            this.btnIncluir_Alterar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnIncluir_Alterar.Name = "btnIncluir_Alterar";
+            this.btnIncluir_Alterar.Size = new System.Drawing.Size(101, 35);
+            this.btnIncluir_Alterar.TabIndex = 11;
+            this.btnIncluir_Alterar.Text = "Incluir";
+            this.btnIncluir_Alterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIncluir_Alterar.UseVisualStyleBackColor = true;
+            this.btnIncluir_Alterar.Click += new System.EventHandler(this.btnIncluir_Alterar_Click);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Image = global::System.XML_Exemple.Properties.Resources.edit_delete_003;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcluir.Location = new System.Drawing.Point(554, 438);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(98, 35);
+            this.btnExcluir.TabIndex = 13;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Image = global::System.XML_Exemple.Properties.Resources.delete_32x32;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(0, 0);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(113, 35);
+            this.btnCancelar.TabIndex = 0;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmAgenda3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 480);
             this.Controls.Add(this.lblvalNome);
@@ -302,7 +315,6 @@
         private Windows.Forms.ListBox lbxAgenda;
         private Windows.Forms.Button btnExcluir;
         private Windows.Forms.Panel pnlAlterar;
-        private Windows.Forms.Button btnCancelar;
         private Windows.Forms.Button btnSelecionar;
         private Windows.Forms.Label lblId;
         private Windows.Forms.TextBox txtObs;
@@ -314,5 +326,6 @@
         private Windows.Forms.MaskedTextBox txtFoneCelular;
         private Windows.Forms.Label lblFoneCelular;
         private Windows.Forms.Label lblvalNome;
+        private Windows.Forms.Button btnCancelar;
     }
 }

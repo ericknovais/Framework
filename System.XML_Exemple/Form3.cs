@@ -16,6 +16,7 @@ namespace System.XML_Exemple
         {
             InitializeComponent();
             CarregaTextoExemplo();
+         
         }
 
         #region Evento dos Botões
@@ -107,6 +108,7 @@ namespace System.XML_Exemple
             if (lbxAgenda.SelectedIndex > -1)
             {
                 btnIncluir_Alterar.Text = "Alterar";
+                btnIncluir_Alterar.Image = Properties.Resources.edit_document_32x32;
                 pnlAlterar.Visible = true;
 
                 Contato cont = contatos.Contato.Find(p => p.Id == (int)lbxAgenda.SelectedValue);
@@ -169,6 +171,7 @@ namespace System.XML_Exemple
         private void Cancelar()
         {
             btnIncluir_Alterar.Text = "Incluir";
+            btnIncluir_Alterar.Image = Properties.Resources.add_32x32;
             pnlAlterar.Visible = false;
         }
 

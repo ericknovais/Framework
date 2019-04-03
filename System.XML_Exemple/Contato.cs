@@ -20,7 +20,8 @@ namespace System.XML_Exemple
         public string Obs { get; set; }
 
         StringBuilder _msgErro = new StringBuilder();
-
+        public static string ExNome = "Ex:Pedro da Silva";
+        public static string ExObs = "Ex:Contato pessoal";
         public void ValidarContato()
         {
              _msgErro.Clear() ;
@@ -34,7 +35,7 @@ namespace System.XML_Exemple
 
         private void CamposObrigatorios(string nomoCampo, string valor)
         {
-            if (string.IsNullOrWhiteSpace(valor))
+            if (string.IsNullOrWhiteSpace(valor) || valor == ExNome)
             {
                 _msgErro.AppendFormat("O campo {0} é obrigatório!{1}", nomoCampo, "\n");
             }

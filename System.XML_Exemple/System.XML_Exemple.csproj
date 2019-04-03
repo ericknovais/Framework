@@ -89,6 +89,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -105,6 +106,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\add_32x32.png" />
+    <None Include="Resources\edit-document_32x32.png" />
+    <None Include="Resources\edit-select-all_002.png" />
+    <None Include="Resources\delete_32x32.png" />
+    <None Include="Resources\edit-delete_003.png" />
     <Content Include="XML\Agenda2.xml" />
     <Content Include="XML\Agenda.xml" />
   </ItemGroup>
