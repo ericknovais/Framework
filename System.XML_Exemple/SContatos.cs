@@ -6,7 +6,7 @@ namespace System.XML_Exemple
 {
     public class SContatos
     {
-        static string arquivo = Properties.Resources.Agenda; // @"E:\Erick\Estudos\DevMidia C#\Framework\System.XML_Exemple\XML\Agenda.xml";
+        static string arquivo = Properties.Resources.arqAgenda1XML; // @"E:\Erick\Estudos\DevMidia C#\Framework\System.XML_Exemple\XML\Agenda.xml";
         static XmlDocument xDoc = new XmlDocument();
         static XElement elementX;
         static Contatos contatos;

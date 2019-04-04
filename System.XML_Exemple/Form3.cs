@@ -16,7 +16,6 @@ namespace System.XML_Exemple
         {
             InitializeComponent();
             CarregaTextoExemplo();
-
         }
 
         #region Evento dos Botões
@@ -96,7 +95,9 @@ namespace System.XML_Exemple
         {
             Contato cont = contatos.Contato.Find(p => p.Id == (int)lbxAgenda.SelectedValue);
             MessageBox.Show("Nome: " + cont.Nome + "\n" +
-                            "Telefone: " + cont.Telefone + "\n" +
+                            "Telefone Residencial: " + cont.Telefone[(int)TiposTelefone.Residencial].Numero + "\n" +
+                            "Telefone Comercial: " + cont.Telefone[(int)TiposTelefone.Comercial].Numero + "\n" +
+                            "Telefone Celular: " + cont.Telefone[(int)TiposTelefone.Celular].Numero + "\n" +
                             "Observações: " + cont.Obs,
                             "Contato",
                             MessageBoxButtons.OK, MessageBoxIcon.Information,
@@ -139,6 +140,31 @@ namespace System.XML_Exemple
             }
         }
 
+        private void btnBusca_Click(object sender, EventArgs e)
+        {
+            frmBuscaContato buscaContato = new frmBuscaContato();
+            buscaContato.FormClosed += BuscaContato_FormClosed;
+            buscaContato.ShowDialog();
+        }
+
+        private void BuscaContato_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (FiltroContatos.Filtro.Count > 0)
+            {
+                this.BindlbxAgenda(FiltroContatos.Filtro);
+                btnLimpaFiltro.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Nenhum resultado encontrado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btnLimpaFiltro_Click(object sender, EventArgs e)
+        {
+            BindlbxAgenda(SContatos.Read().Contato);
+        }
+
         #endregion
 
         #region Metodos
@@ -151,8 +177,8 @@ namespace System.XML_Exemple
             txtFoneComercial.Clear();
             txtFoneCelular.Clear();
             txtObs.Clear();
-            txtNome.Focus();
             CarregaTextoExemplo();
+            txtNome.Focus();
         }
 
         private void BindlbxAgenda(List<Contato> contato)
@@ -160,6 +186,7 @@ namespace System.XML_Exemple
             lbxAgenda.DataSource = contato;
             lbxAgenda.DisplayMember = "Nome";
             lbxAgenda.ValueMember = "Id";
+            btnLimpaFiltro.Visible = false;
         }
 
         private int NextId()
@@ -285,50 +312,38 @@ namespace System.XML_Exemple
             ExemploFoneCelular();
             ExemploObs();
         }
+
         private void ExemploNome()
         {
             txtNome.Text = Contato.ExNome;
             txtNome.ForeColor = Drawing.Color.Silver;
         }
+
         private void ExemploFoneResidencial()
         {
             txtFoneResidencial.Text = Telefone.ExNumResidencial;
             txtFoneResidencial.ForeColor = Drawing.Color.Silver;
         }
+
         private void ExemploFoneComercial()
         {
             txtFoneComercial.Text = Telefone.ExNumComercial;
             txtFoneComercial.ForeColor = Drawing.Color.Silver;
         }
+
         private void ExemploFoneCelular()
         {
             txtFoneCelular.Text = Telefone.ExNumCelular;
             txtFoneCelular.ForeColor = Drawing.Color.Silver;
         }
+
         private void ExemploObs()
         {
             txtObs.Text = Contato.ExObs;
             txtObs.ForeColor = Drawing.Color.Silver;
         }
-
-
-
-
         #endregion
 
-        private void btnBusca_Click(object sender, EventArgs e)
-        {
-            frmBuscaContato buscaContato = new frmBuscaContato();
-            buscaContato.FormClosed += BuscaContato_FormClosed;
-            buscaContato.ShowDialog();
-        }
-
-        private void BuscaContato_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (FiltroContatos.Filtro.Count > 0)
-            {
-                this.BindlbxAgenda(FiltroContatos.Filtro);
-            }
-        }
+        
     }
 }

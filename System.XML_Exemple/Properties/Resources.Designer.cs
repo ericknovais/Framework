@@ -73,18 +73,9 @@ namespace System.XML_Exemple.Properties {
         /// <summary>
         ///   Looks up a localized string similar to E:\Erick\Estudos\DevMidia C#\Framework\System.XML_Exemple\XML\Agenda.xml.
         /// </summary>
-        internal static string Agenda {
+        internal static string arqAgenda1XML {
             get {
-                return ResourceManager.GetString("Agenda", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to E:\Documentos\OneDrive\Icones\delete_32x32.png.
-        /// </summary>
-        internal static string CancelarImg {
-            get {
-                return ResourceManager.GetString("CancelarImg", resourceCulture);
+                return ResourceManager.GetString("arqAgenda1XML", resourceCulture);
             }
         }
         
@@ -144,6 +135,16 @@ namespace System.XML_Exemple.Properties {
         internal static System.Drawing.Bitmap edit_select_all_002 {
             get {
                 object obj = ResourceManager.GetObject("edit_select_all_002", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("refresh_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

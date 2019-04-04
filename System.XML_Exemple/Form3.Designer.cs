@@ -48,6 +48,7 @@
             this.btnIncluir_Alterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnBusca = new System.Windows.Forms.Button();
+            this.btnLimpaFiltro = new System.Windows.Forms.Button();
             this.pnlAlterar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +84,7 @@
             // 
             this.lbxAgenda.FormattingEnabled = true;
             this.lbxAgenda.ItemHeight = 15;
-            this.lbxAgenda.Location = new System.Drawing.Point(366, 29);
+            this.lbxAgenda.Location = new System.Drawing.Point(363, 29);
             this.lbxAgenda.Name = "lbxAgenda";
             this.lbxAgenda.Size = new System.Drawing.Size(286, 394);
             this.lbxAgenda.TabIndex = 15;
@@ -123,7 +124,7 @@
             this.btnSelecionar.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelecionar.Image = global::System.XML_Exemple.Properties.Resources.edit_select_all_002;
             this.btnSelecionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelecionar.Location = new System.Drawing.Point(426, 438);
+            this.btnSelecionar.Location = new System.Drawing.Point(423, 433);
             this.btnSelecionar.Name = "btnSelecionar";
             this.btnSelecionar.Size = new System.Drawing.Size(122, 35);
             this.btnSelecionar.TabIndex = 12;
@@ -228,7 +229,7 @@
             this.lblvalNome.AutoSize = true;
             this.lblvalNome.BackColor = System.Drawing.SystemColors.Control;
             this.lblvalNome.ForeColor = System.Drawing.Color.Red;
-            this.lblvalNome.Location = new System.Drawing.Point(346, 29);
+            this.lblvalNome.Location = new System.Drawing.Point(342, 29);
             this.lblvalNome.Name = "lblvalNome";
             this.lblvalNome.Size = new System.Drawing.Size(15, 17);
             this.lblvalNome.TabIndex = 16;
@@ -261,7 +262,7 @@
             this.btnExcluir.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.Image = global::System.XML_Exemple.Properties.Resources.edit_delete_003;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(554, 438);
+            this.btnExcluir.Location = new System.Drawing.Point(551, 433);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(98, 35);
             this.btnExcluir.TabIndex = 13;
@@ -277,7 +278,7 @@
             this.btnBusca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBusca.Image = global::System.XML_Exemple.Properties.Resources.edit_find_replace;
             this.btnBusca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBusca.Location = new System.Drawing.Point(15, 438);
+            this.btnBusca.Location = new System.Drawing.Point(15, 433);
             this.btnBusca.Margin = new System.Windows.Forms.Padding(0);
             this.btnBusca.Name = "btnBusca";
             this.btnBusca.Size = new System.Drawing.Size(88, 35);
@@ -287,11 +288,30 @@
             this.btnBusca.UseVisualStyleBackColor = true;
             this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
             // 
+            // btnLimpaFiltro
+            // 
+            this.btnLimpaFiltro.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnLimpaFiltro.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnLimpaFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpaFiltro.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpaFiltro.Image = global::System.XML_Exemple.Properties.Resources.refresh_32x32;
+            this.btnLimpaFiltro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpaFiltro.Location = new System.Drawing.Point(106, 433);
+            this.btnLimpaFiltro.Name = "btnLimpaFiltro";
+            this.btnLimpaFiltro.Size = new System.Drawing.Size(114, 35);
+            this.btnLimpaFiltro.TabIndex = 18;
+            this.btnLimpaFiltro.Text = "&Limpa filtro";
+            this.btnLimpaFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpaFiltro.UseVisualStyleBackColor = true;
+            this.btnLimpaFiltro.Visible = false;
+            this.btnLimpaFiltro.Click += new System.EventHandler(this.btnLimpaFiltro_Click);
+            // 
             // frmAgenda3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 480);
+            this.ClientSize = new System.Drawing.Size(656, 480);
+            this.Controls.Add(this.btnLimpaFiltro);
             this.Controls.Add(this.btnBusca);
             this.Controls.Add(this.lblvalNome);
             this.Controls.Add(this.txtFoneCelular);
@@ -347,5 +367,6 @@
         private Windows.Forms.Label lblvalNome;
         private Windows.Forms.Button btnCancelar;
         private Windows.Forms.Button btnBusca;
+        private Windows.Forms.Button btnLimpaFiltro;
     }
 }

@@ -31,7 +31,6 @@
             this.txtBusca = new System.Windows.Forms.TextBox();
             this.cmbCampo = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.lblResultado = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtBusca
@@ -71,27 +70,19 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // lblResultado
-            // 
-            this.lblResultado.AutoSize = true;
-            this.lblResultado.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultado.Location = new System.Drawing.Point(12, 42);
-            this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(42, 17);
-            this.lblResultado.TabIndex = 3;
-            this.lblResultado.Text = "label1";
-            // 
             // frmBuscaContato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 181);
-            this.Controls.Add(this.lblResultado);
+            this.ClientSize = new System.Drawing.Size(634, 51);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.cmbCampo);
             this.Controls.Add(this.txtBusca);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmBuscaContato";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Busca Contato";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -103,6 +94,5 @@
         private Windows.Forms.TextBox txtBusca;
         private Windows.Forms.ComboBox cmbCampo;
         private Windows.Forms.Button btnBuscar;
-        private Windows.Forms.Label lblResultado;
     }
 }

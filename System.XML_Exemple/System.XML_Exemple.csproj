@@ -123,6 +123,7 @@
     <None Include="Resources\edit-delete_003.png" />
     <None Include="Resources\edit-find-replace.png" />
     <None Include="Resources\edit-find.png" />
+    <None Include="Resources\refresh_32x32.png" />
     <Content Include="XML\Agenda2.xml" />
     <Content Include="XML\Agenda.xml" />
   </ItemGroup>

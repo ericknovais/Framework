@@ -17,6 +17,7 @@ namespace System.XML_Exemple
         public frmBuscaContato()
         {
             InitializeComponent();
+            cmbCampo.Text = "Nome";
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -24,10 +25,12 @@ namespace System.XML_Exemple
             contatos = SContatos.Read();
             if (cmbCampo.Text == "Nome")
             {
-                resultado = contatos.Contato.Where(p => p.Nome == txtBusca.Text).ToList<Contato>();
+                resultado = contatos.Contato.Where(p => p.Nome.Contains(txtBusca.Text)).ToList<Contato>();
             }
 
             FiltroContatos.Filtro = resultado;
+            this.Close();
+            
         }
     }
 }

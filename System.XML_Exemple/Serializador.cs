@@ -9,7 +9,7 @@ namespace System.XML_Exemple
     {
         public static  T Deserialize<T>(this XElement xElement)
         {
-            using (var memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(xElement.ToString())))
+            using (var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(xElement.ToString())))
             {
                 var xmlSerializer = new XmlSerializer(typeof(T));
                 return (T)xmlSerializer.Deserialize(memoryStream);
@@ -24,7 +24,7 @@ namespace System.XML_Exemple
                 {
                     var xmlSerialize = new XmlSerializer(typeof(T));
                     xmlSerialize.Serialize(streamWrite, obj);
-                    return XElement.Parse(Encoding.ASCII.GetString(memoryStream.ToArray()));
+                    return XElement.Parse(Encoding.UTF8.GetString(memoryStream.ToArray()));
                 }
             }
         }

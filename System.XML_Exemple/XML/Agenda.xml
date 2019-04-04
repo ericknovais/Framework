@@ -15,7 +15,7 @@
       <Tipo>2</Tipo>
       <Numero>(11)94753-2313</Numero>
     </Telefone>
-    <Obs>Meus numeros passoais</Obs>
+    <Obs>Meus números</Obs>
   </Contato>
   <Contato>
     <Id>2</Id>
@@ -32,7 +32,7 @@
       <Tipo>2</Tipo>
       <Numero>(11)94753-2314</Numero>
     </Telefone>
-    <Obs>M?e</Obs>
+    <Obs>Mãe</Obs>
   </Contato>
   <Contato>
     <Id>3</Id>
@@ -50,5 +50,39 @@
       <Numero>(99)99999-9999</Numero>
     </Telefone>
     <Obs>Ex:Contato pessoal</Obs>
+  </Contato>
+  <Contato>
+    <Id>4</Id>
+    <Nome>Teste2</Nome>
+    <Telefone>
+      <Tipo>0</Tipo>
+      <Numero>(99)9999-9999</Numero>
+    </Telefone>
+    <Telefone>
+      <Tipo>1</Tipo>
+      <Numero>(99)9999-9999</Numero>
+    </Telefone>
+    <Telefone>
+      <Tipo>2</Tipo>
+      <Numero>(99)99999-9999</Numero>
+    </Telefone>
+    <Obs>Contanto de teste</Obs>
+  </Contato>
+  <Contato>
+    <Id>5</Id>
+    <Nome>Giovanna</Nome>
+    <Telefone>
+      <Tipo>0</Tipo>
+      <Numero>(99)9999-9999</Numero>
+    </Telefone>
+    <Telefone>
+      <Tipo>1</Tipo>
+      <Numero>(99)9999-9999</Numero>
+    </Telefone>
+    <Telefone>
+      <Tipo>2</Tipo>
+      <Numero>(11)94715-7159</Numero>
+    </Telefone>
+    <Obs>Namorada</Obs>
   </Contato>
 </Contatos>
