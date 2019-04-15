@@ -1,1 +1,1 @@
-# O Repositório framework, é para estudos voltados para o framework do Visual Studio C#. 
+# O Repositório Framework, é voltados para estudos voltados ao framework do Visual Studio C#. 
