@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
 
 namespace Aplicacao
 {
@@ -21,21 +22,39 @@ namespace Aplicacao
 
             var ConnectionString = conBuilder;
 
-            using (var con = new SqlConnection(ConnectionString))
+            var con = new SqlConnection(ConnectionString);
+
+            //Entrada de Dados 
+            Console.WriteLine("Informe o nome do cliente");
+            var nome = Console.ReadLine();
+            Console.WriteLine("Informe o e-mail do cliente");
+            var email = Console.ReadLine();
+            //gravação de dados
+            //var SQL = "INSERT INTO CLIENTES(NomeCliente,Email) VALUES(@NomeCliente,@Email);";
+            var SQL = "InsertCliente";
+            var cmd = new SqlCommand(SQL, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@NomeCliente", nome);
+            cmd.Parameters.AddWithValue("@Email", email);
+            con.Open();
+            try
             {
-                Console.WriteLine("String de conexão: " + ConnectionString);
-                con.Open();
-                Console.WriteLine("Conexão com banco de dados efetuada com sucesso...");
-                Console.WriteLine("Estado da conexão " + con.State);
-                con.Close();
-                Console.WriteLine("Estado da conexão " + con.State);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Registro salvo com sucesso");
+                Console.ReadKey();
             }
+            finally
+            {
+
+                con.Close();
+            }
+
             Console.ReadKey();
         }
 
         private static string getConnectionStringFromConfig()
         {
-           return ConfigurationManager.ConnectionStrings["Cadastro"].ConnectionString;
+            return ConfigurationManager.ConnectionStrings["Cadastro"].ConnectionString;
         }
 
         private static SqlConnectionStringBuilder getConnectionStringFromBuilder()
