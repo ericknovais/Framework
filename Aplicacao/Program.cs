@@ -13,6 +13,61 @@ namespace Aplicacao
     {
         static void Main(string[] args)
         {
+            var conBuilder = getConnectionStringFromConfig();
+            var ConStr = conBuilder;
+            using (var con = new SqlConnection(ConStr))
+            {
+                con.Open();
+                var trans = con.BeginTransaction();
+                try
+                {
+                    //var sql1 = "INSERT INTO CLIENTES(NomeCliente,Email) VALUES(@NomeCliente,@Email);";
+                    var sql2 = "Delete CLIENTES WHERE IDCliente=3";
+                    var sql1 = "INSERT INTO CLIENTES(NomeCliente) VALUES(@NomeCliente);";
+                    var cmd1 = con.CreateCommand();
+                    cmd1.CommandText = sql1;
+                    cmd1.Transaction = trans;
+                    var cmd2 = con.CreateCommand();
+                    cmd2.Transaction = trans;
+                    cmd2.CommandText = sql2;
+                    cmd1.Parameters.AddWithValue("@NomeCliente","Erick");
+                    cmd1.Parameters.AddWithValue("@Email","erick.hora@gmail.com");
+                    //Executados em uma única trasação
+                    cmd1.ExecuteNonQuery();
+                    cmd2.ExecuteNonQuery();
+                    //Efetiva operações no DB
+                    trans.Commit();
+                    Console.WriteLine("Comandos executados com sucesso");
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine("Erro ao executar trasalção");
+                    Console.WriteLine(e.GetType());
+                    Console.WriteLine(e.Message);
+
+                }
+                Console.ReadLine();
+            }
+        }
+
+        private static string getConnectionStringFromConfig()
+        {
+            return ConfigurationManager.ConnectionStrings["Cadastro"].ConnectionString;
+        }
+
+        private static SqlConnectionStringBuilder getConnectionStringFromBuilder()
+        {
+            var conBuilder = new SqlConnectionStringBuilder();
+            conBuilder.DataSource = @"DH\DESENV";
+            conBuilder.InitialCatalog = "Cadastro";
+            conBuilder.UserID = "sa";
+            conBuilder.Password = "endh";
+            return conBuilder;
+        }
+
+        private void InserirCliente()
+        {
             //string ConnectionString = @"Server = DH\DESENV; Database = Cadastro;
             //User ID = sa; Password = endh";
             //Connect Timeout=30;Encrypt=False;
@@ -50,21 +105,6 @@ namespace Aplicacao
             }
 
             Console.ReadKey();
-        }
-
-        private static string getConnectionStringFromConfig()
-        {
-            return ConfigurationManager.ConnectionStrings["Cadastro"].ConnectionString;
-        }
-
-        private static SqlConnectionStringBuilder getConnectionStringFromBuilder()
-        {
-            var conBuilder = new SqlConnectionStringBuilder();
-            conBuilder.DataSource = @"DH\DESENV";
-            conBuilder.InitialCatalog = "Cadastro";
-            conBuilder.UserID = "sa";
-            conBuilder.Password = "endh";
-            return conBuilder;
         }
     }
 }
