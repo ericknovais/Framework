@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[PRODUTOS]
+(
+ IdProduto INT NOT NULL PRIMARY KEY
+ ,NomeProduto VARCHAR(MAX) NOT NULL
+) 

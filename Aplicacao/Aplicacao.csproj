@@ -51,7 +51,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Script\TabelaProduto.sql" />
     <Content Include="Stored Procedure\InsertClientes.sql" />
+    <Content Include="Stored Procedure\SelectClienteProdutos.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
