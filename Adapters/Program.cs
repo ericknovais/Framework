@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.IO;
 
 namespace Adapters
 {
@@ -28,6 +29,7 @@ namespace Adapters
                 Console.WriteLine("E-mail: " + row[2].ToString());
             }
             dt.WriteXml("dados.xml");
+
             Console.ReadKey();
         }
     }
