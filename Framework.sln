@@ -29,6 +29,31 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Relations", "Relations\Rela
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF", "EF\EF.csproj", "{7B4020EC-30A7-4EFA-B757-ADBA7E6FC2F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servico", "Servico\Servico.csproj", "{921B41FD-831C-4583-95F9-B37C01BDC530}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ServiceHost", "ServiceHost\", "{079AA84B-1FD4-404E-AB29-30245A183672}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{921b41fd-831c-4583-95f9-b37c01bdc530}|Servico.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_57531"
+		Debug.AspNetCompiler.PhysicalPath = "ServiceHost\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57531\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_57531"
+		Release.AspNetCompiler.PhysicalPath = "ServiceHost\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57531\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57531"
+		SlnRelativePath = "ServiceHost\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +112,14 @@ Global
 		{7B4020EC-30A7-4EFA-B757-ADBA7E6FC2F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B4020EC-30A7-4EFA-B757-ADBA7E6FC2F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B4020EC-30A7-4EFA-B757-ADBA7E6FC2F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{921B41FD-831C-4583-95F9-B37C01BDC530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{921B41FD-831C-4583-95F9-B37C01BDC530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{921B41FD-831C-4583-95F9-B37C01BDC530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{921B41FD-831C-4583-95F9-B37C01BDC530}.Release|Any CPU.Build.0 = Release|Any CPU
+		{079AA84B-1FD4-404E-AB29-30245A183672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{079AA84B-1FD4-404E-AB29-30245A183672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{079AA84B-1FD4-404E-AB29-30245A183672}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{079AA84B-1FD4-404E-AB29-30245A183672}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
