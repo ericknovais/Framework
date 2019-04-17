@@ -54,6 +54,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ServiceHost", "ServiceHost\
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ser.Cliente", "Ser.Cliente\Ser.Cliente.csproj", "{DACC2E8F-C6B8-48DB-A5D7-A23B7E488A8F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{079AA84B-1FD4-404E-AB29-30245A183672} = {079AA84B-1FD4-404E-AB29-30245A183672}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -120,6 +125,10 @@ Global
 		{079AA84B-1FD4-404E-AB29-30245A183672}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{079AA84B-1FD4-404E-AB29-30245A183672}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{079AA84B-1FD4-404E-AB29-30245A183672}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{DACC2E8F-C6B8-48DB-A5D7-A23B7E488A8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DACC2E8F-C6B8-48DB-A5D7-A23B7E488A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DACC2E8F-C6B8-48DB-A5D7-A23B7E488A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DACC2E8F-C6B8-48DB-A5D7-A23B7E488A8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
