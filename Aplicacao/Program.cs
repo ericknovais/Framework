@@ -15,37 +15,7 @@ namespace Aplicacao
         {
             var conBuilder = getConnectionStringFromConfig();
             var ConStr = conBuilder;
-            using (var con = new SqlConnection(ConStr))
-            {
-                var cmd = con.CreateCommand();
-                cmd.CommandText = "SelecClientesProdutos";
-                cmd.CommandType = CommandType.StoredProcedure;
-                con.Open();
-                // Somente Leitura, sem cache
-                var dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);//
-                //varredura no data reader
-                Console.WriteLine("LISTAGEM DE CLIENTES");
-                Console.WriteLine("--------------------");
-                while (dr.Read())
-                {
-                    Console.WriteLine("ID: " + dr[0].ToString());
-                    Console.WriteLine("Nome: " + dr[1]);
-                    Console.WriteLine("E-mail: " + dr[2]);
-                    Console.WriteLine("--------------------------------");
-                }
-
-                dr.NextResult(); //Posiciona leitor no próximo resultSet
-                Console.WriteLine("LISTAGEM DE PRODUTOS");
-                Console.WriteLine("--------------------");
-                while (dr.Read())
-                {
-                    Console.WriteLine("ID: " + dr[0].ToString());
-                    Console.WriteLine("Nome: " + dr[1]);
-                    Console.WriteLine("--------------------------------");
-                }
-                dr.Close();
-                Console.ReadKey();
-            }
+            
         }
 
         private static string getConnectionStringFromConfig()
@@ -139,6 +109,41 @@ namespace Aplicacao
 
                 }
                 Console.ReadLine();
+            }
+        }
+
+        private void SelectTabela(string ConStr)
+        {
+            using (var con = new SqlConnection(ConStr))
+            {
+                var cmd = con.CreateCommand();
+                cmd.CommandText = "SelecClientesProdutos";
+                cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                // Somente Leitura, sem cache
+                var dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);//
+                //varredura no data reader
+                Console.WriteLine("LISTAGEM DE CLIENTES");
+                Console.WriteLine("--------------------");
+                while (dr.Read())
+                {
+                    Console.WriteLine("ID: " + dr[0].ToString());
+                    Console.WriteLine("Nome: " + dr[1]);
+                    Console.WriteLine("E-mail: " + dr[2]);
+                    Console.WriteLine("--------------------------------");
+                }
+
+                dr.NextResult(); //Posiciona leitor no próximo resultSet
+                Console.WriteLine("LISTAGEM DE PRODUTOS");
+                Console.WriteLine("--------------------");
+                while (dr.Read())
+                {
+                    Console.WriteLine("ID: " + dr[0].ToString());
+                    Console.WriteLine("Nome: " + dr[1]);
+                    Console.WriteLine("--------------------------------");
+                }
+                dr.Close();
+                Console.ReadKey();
             }
         }
     }
