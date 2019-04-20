@@ -83,6 +83,32 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FSystem.IO", "FSystem.IO", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FSystem.Resource", "FSystem.Resource", "{54300E58-E5EB-4634-8AA4-819ACDFB7413}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FWebService", "FWebService", "{7A21F3B9-6502-4B6B-95D5-615B27E8BAA3}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Servico.webService", "Servico.webService\", "{9642404C-B3A8-4786-B49A-2136F27C76A0}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50239"
+		Debug.AspNetCompiler.PhysicalPath = "Servico.webService\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50239\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50239"
+		Release.AspNetCompiler.PhysicalPath = "Servico.webService\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50239\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50239"
+		SlnRelativePath = "Servico.webService\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servico.Cliente", "Servico.Cliente\Servico.Cliente.csproj", "{60937349-6BB4-4F5C-B926-24C620121EAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +179,14 @@ Global
 		{DACC2E8F-C6B8-48DB-A5D7-A23B7E488A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DACC2E8F-C6B8-48DB-A5D7-A23B7E488A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DACC2E8F-C6B8-48DB-A5D7-A23B7E488A8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9642404C-B3A8-4786-B49A-2136F27C76A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9642404C-B3A8-4786-B49A-2136F27C76A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9642404C-B3A8-4786-B49A-2136F27C76A0}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{9642404C-B3A8-4786-B49A-2136F27C76A0}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{60937349-6BB4-4F5C-B926-24C620121EAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60937349-6BB4-4F5C-B926-24C620121EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60937349-6BB4-4F5C-B926-24C620121EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60937349-6BB4-4F5C-B926-24C620121EAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -174,6 +208,8 @@ Global
 		{921B41FD-831C-4583-95F9-B37C01BDC530} = {79BFEB2E-D7D6-4090-80BF-BB432431245D}
 		{079AA84B-1FD4-404E-AB29-30245A183672} = {79BFEB2E-D7D6-4090-80BF-BB432431245D}
 		{DACC2E8F-C6B8-48DB-A5D7-A23B7E488A8F} = {79BFEB2E-D7D6-4090-80BF-BB432431245D}
+		{9642404C-B3A8-4786-B49A-2136F27C76A0} = {7A21F3B9-6502-4B6B-95D5-615B27E8BAA3}
+		{60937349-6BB4-4F5C-B926-24C620121EAB} = {7A21F3B9-6502-4B6B-95D5-615B27E8BAA3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47BE8615-78D0-4D37-A38B-7E381A7976C5}
