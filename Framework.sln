@@ -125,6 +125,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FEncapsulamento", "FEncapsu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Encapsulamento", "Sistema.Encapsulamento\Sistema.Encapsulamento.csproj", "{544B33F1-BD91-4147-8254-78C0488DF8CB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FPolimorfismo", "FPolimorfismo", "{9119D0FF-8DC5-447C-870C-5C934DB6FA18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedidos.Polimorfismo", "Pedidos.Polimorfismo\Pedidos.Polimorfismo.csproj", "{25047A41-32AF-4059-B21E-38C8F13B90CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -219,6 +223,10 @@ Global
 		{544B33F1-BD91-4147-8254-78C0488DF8CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{544B33F1-BD91-4147-8254-78C0488DF8CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{544B33F1-BD91-4147-8254-78C0488DF8CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25047A41-32AF-4059-B21E-38C8F13B90CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25047A41-32AF-4059-B21E-38C8F13B90CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25047A41-32AF-4059-B21E-38C8F13B90CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25047A41-32AF-4059-B21E-38C8F13B90CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -246,6 +254,7 @@ Global
 		{55F922C5-379D-4116-B77E-1A67E09DF193} = {35AC751B-CD26-469A-87A2-FA2AA6B97165}
 		{E5D0E50F-4CA2-47ED-BAA6-63D1379AB98B} = {1002238E-C2CB-445E-B9C9-8DD869613C69}
 		{544B33F1-BD91-4147-8254-78C0488DF8CB} = {923D2602-A1F6-4FB3-813B-7C2AB75ECA50}
+		{25047A41-32AF-4059-B21E-38C8F13B90CB} = {9119D0FF-8DC5-447C-870C-5C934DB6FA18}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47BE8615-78D0-4D37-A38B-7E381A7976C5}
