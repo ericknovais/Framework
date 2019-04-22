@@ -133,6 +133,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FAbstracao", "FAbstracao", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Abstracao", "Sistema.Abstracao\Sistema.Abstracao.csproj", "{8B846D70-0338-497F-A30D-7934E1990849}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FInterfaces", "FInterfaces", "{4435740C-8B2A-49A3-AF5B-02A6626685F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaNotificacao.Interfaces", "SistemaNotificacao.Interfaces\SistemaNotificacao.Interfaces.csproj", "{2193F4F1-DA9C-49F6-9DFF-3E0DFAA7217D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -235,6 +239,10 @@ Global
 		{8B846D70-0338-497F-A30D-7934E1990849}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B846D70-0338-497F-A30D-7934E1990849}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B846D70-0338-497F-A30D-7934E1990849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2193F4F1-DA9C-49F6-9DFF-3E0DFAA7217D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2193F4F1-DA9C-49F6-9DFF-3E0DFAA7217D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2193F4F1-DA9C-49F6-9DFF-3E0DFAA7217D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2193F4F1-DA9C-49F6-9DFF-3E0DFAA7217D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -264,6 +272,7 @@ Global
 		{544B33F1-BD91-4147-8254-78C0488DF8CB} = {923D2602-A1F6-4FB3-813B-7C2AB75ECA50}
 		{25047A41-32AF-4059-B21E-38C8F13B90CB} = {9119D0FF-8DC5-447C-870C-5C934DB6FA18}
 		{8B846D70-0338-497F-A30D-7934E1990849} = {D40297C7-5FAF-4E2F-BB98-0CB2A4D0B029}
+		{2193F4F1-DA9C-49F6-9DFF-3E0DFAA7217D} = {4435740C-8B2A-49A3-AF5B-02A6626685F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47BE8615-78D0-4D37-A38B-7E381A7976C5}
