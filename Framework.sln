@@ -109,6 +109,10 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Servico.webService", "Servi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servico.Cliente", "Servico.Cliente\Servico.Cliente.csproj", "{60937349-6BB4-4F5C-B926-24C620121EAB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FServicoWebApi", "FServicoWebApi", "{73DBA99D-54B0-49A0-BC5A-3CB6A30FD761}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicoWebApi", "ServicoWebApi\ServicoWebApi.csproj", "{6C4E165E-44D2-489F-BA19-5B7BABD9380C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -187,6 +191,10 @@ Global
 		{60937349-6BB4-4F5C-B926-24C620121EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60937349-6BB4-4F5C-B926-24C620121EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60937349-6BB4-4F5C-B926-24C620121EAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C4E165E-44D2-489F-BA19-5B7BABD9380C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C4E165E-44D2-489F-BA19-5B7BABD9380C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C4E165E-44D2-489F-BA19-5B7BABD9380C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C4E165E-44D2-489F-BA19-5B7BABD9380C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -210,6 +218,7 @@ Global
 		{DACC2E8F-C6B8-48DB-A5D7-A23B7E488A8F} = {79BFEB2E-D7D6-4090-80BF-BB432431245D}
 		{9642404C-B3A8-4786-B49A-2136F27C76A0} = {7A21F3B9-6502-4B6B-95D5-615B27E8BAA3}
 		{60937349-6BB4-4F5C-B926-24C620121EAB} = {7A21F3B9-6502-4B6B-95D5-615B27E8BAA3}
+		{6C4E165E-44D2-489F-BA19-5B7BABD9380C} = {73DBA99D-54B0-49A0-BC5A-3CB6A30FD761}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47BE8615-78D0-4D37-A38B-7E381A7976C5}
