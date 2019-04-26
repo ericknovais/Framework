@@ -161,6 +161,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FColecoes_E_Tabelas", "FCol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colecoes_E_Tabelas", "Colecoes_E_Tabelas\Colecoes_E_Tabelas.csproj", "{F8CE5149-8ED1-4830-8672-30F18CC42A55}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FColecoesGenericas", "FColecoesGenericas", "{4A2CA63B-52F6-4F5F-A8C9-C331E0516B5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColecoesGenericas", "ColecoesGenericas\ColecoesGenericas.csproj", "{50DCBA9B-C717-4CFE-875A-A926CF119AE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -291,6 +295,10 @@ Global
 		{F8CE5149-8ED1-4830-8672-30F18CC42A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8CE5149-8ED1-4830-8672-30F18CC42A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8CE5149-8ED1-4830-8672-30F18CC42A55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50DCBA9B-C717-4CFE-875A-A926CF119AE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50DCBA9B-C717-4CFE-875A-A926CF119AE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50DCBA9B-C717-4CFE-875A-A926CF119AE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50DCBA9B-C717-4CFE-875A-A926CF119AE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -327,6 +335,7 @@ Global
 		{B7CA7E14-8EBD-49F6-BD4C-9CFEE3460B80} = {C9EFE9E3-DE67-49A1-A34A-941A5D984A4D}
 		{F4FF54AC-FE69-4E2E-9944-E769126D8A24} = {289569B2-3B19-4332-B6C0-2D8412C233B5}
 		{F8CE5149-8ED1-4830-8672-30F18CC42A55} = {F80B08B3-34D6-437D-A879-A6332E3CCD5C}
+		{50DCBA9B-C717-4CFE-875A-A926CF119AE3} = {4A2CA63B-52F6-4F5F-A8C9-C331E0516B5F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47BE8615-78D0-4D37-A38B-7E381A7976C5}
