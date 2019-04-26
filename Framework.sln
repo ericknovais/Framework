@@ -157,6 +157,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FArrays_Listas", "FArrays_L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArraysListas", "ArraysListas\ArraysListas.csproj", "{F4FF54AC-FE69-4E2E-9944-E769126D8A24}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FColecoes_E_Tabelas", "FColecoes_E_Tabelas", "{F80B08B3-34D6-437D-A879-A6332E3CCD5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colecoes_E_Tabelas", "Colecoes_E_Tabelas\Colecoes_E_Tabelas.csproj", "{F8CE5149-8ED1-4830-8672-30F18CC42A55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -283,6 +287,10 @@ Global
 		{F4FF54AC-FE69-4E2E-9944-E769126D8A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4FF54AC-FE69-4E2E-9944-E769126D8A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4FF54AC-FE69-4E2E-9944-E769126D8A24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8CE5149-8ED1-4830-8672-30F18CC42A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8CE5149-8ED1-4830-8672-30F18CC42A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8CE5149-8ED1-4830-8672-30F18CC42A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8CE5149-8ED1-4830-8672-30F18CC42A55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -318,6 +326,7 @@ Global
 		{32D2ADE7-ED82-4A32-A02B-8A275CEA1619} = {81151E25-362E-42DB-8882-3B91CC5A1D50}
 		{B7CA7E14-8EBD-49F6-BD4C-9CFEE3460B80} = {C9EFE9E3-DE67-49A1-A34A-941A5D984A4D}
 		{F4FF54AC-FE69-4E2E-9944-E769126D8A24} = {289569B2-3B19-4332-B6C0-2D8412C233B5}
+		{F8CE5149-8ED1-4830-8672-30F18CC42A55} = {F80B08B3-34D6-437D-A879-A6332E3CCD5C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47BE8615-78D0-4D37-A38B-7E381A7976C5}
